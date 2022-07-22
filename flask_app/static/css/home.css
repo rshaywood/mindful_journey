@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* navigation bar */
+.navbar{
+    width: 100%;
+    margin: 0 auto;
+    
+}
+.collapse{
+    background-color: #ced4da;
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    align-items: center;
+}
+.left-side-nav ul,.right-side-nav ul,.title{
+    width:300px;
+    /* background-color: #20c997; */
+    display: flex;
+    gap:50px;
+}
+* ul li,li a, .nav-item a, .title a{
+    color: #343a40;
+}
+ .nav-item a, .title a:hover{
+    color: #343a40;
+}
+.sign-in{
+    text-decoration: none;
+}
+i.fas{
+    margin-right: 12px;
+    font-size: 18px;
+}
+.navbar-nav{
+    padding-right: 20px;
+    width:70%;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:15px;
+}
+
+.hero-section{
+    height: 100vh;
+    /* background-image: url("../images/brett-jordan-qF_KGJbgsOo-unsplash.jpg");
+    background-size:contain;
+    background-repeat: no-repeat; */
+}
+
+/* style grid container */
+.grid-container{
+width:95% ;
+margin: 0 auto;
+/* background-color: beige; */
+display: grid;
+grid-template-columns: 600px 600px;
+justify-items: stretch;
+gap:20px;
+}
+ a .signin-btn{
+    background-color: #0ca678;
+    color: #343a40;
+    padding: 5px 20px;
+    border-color:#343a40;
+
+}
+a .signin-btn:hover{
+    background-color: #20c997;
+    color: #343a40;
+    border-color:#343a40;
+}
