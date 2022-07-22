@@ -19,6 +19,7 @@ class User:
         self.last_name = data['last_name']
         self.email = data['email']
         self.password=data['password']
+        self.user_image=data['user_image']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         # self.activites=[]
@@ -35,7 +36,7 @@ class User:
             INSERT INTO users 
             (first_name, last_name, email, password)
             VALUES
-            (%(first_name)s, %(last_name)s, %(email)s, %(password)s)
+            (%(first_name)s, %(last_name)s, %(email)s, %(password)s,%(user_image)s)
             ;"""
             user_id = connectToMySQL(cls.DB).query_db(query,data)
             session["user_id"] = user_id
@@ -55,7 +56,7 @@ class User:
             result = cls(result[0])
         return result
 
-#UPDATE ----SQL----MODELS
+
 
     #READ ----SQL----MODELS
     @classmethod
@@ -71,6 +72,9 @@ class User:
             user = cls(user[0])
         return user
 
+
+#UPDATE ----SQL----MODELS
+
 #DELETE ----SQL----MODELS
 
 
@@ -85,6 +89,7 @@ class User:
     @staticmethod
     def validate_user_reg_data(data):
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') #this regulaer exp for making sure the email must have charecters like letters and @ nd dot ...etc
+        PASSWORD_REGEX=re.compile(r'^(?=.[a-z])(?=.[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$')#regular expression to make sure password should has at least one capital letter and one number
         is_valid = True # we assume this is true
         #validate our email to see if its in correct format
         if not EMAIL_REGEX.match(data['email']):
@@ -103,7 +108,7 @@ class User:
             flash("last_name must be at least 3 or more characters.")
             is_valid = False
         #validate password to make sure it fits REGEX
-        if not PASSWORD_REGEX.match(data["password"]):
+        if not PASSWORD_REGEX.match(data["password"]) or len(data["password"])<8 :
             flash("Your password must be 8 characters and contain at least one uppercase letter, a number, and a lowercase letter")
             is_valid = False
         #validate password again to make sure it matches the confirm password
