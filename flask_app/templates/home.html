@@ -32,10 +32,10 @@
                 <div class="left-side-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">learn</a>
+                            <a class="nav-link active" aria-current="page" href="#">Learn</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Event</a>
+                            <a class="nav-link active" aria-current="page" href="#">Events</a>
                         </li>
                         </ul>
                 </div>
@@ -45,11 +45,11 @@
                     <div class="right-side-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item signin-link">
-                                <i class="fas fa-user"></i><a href="" class="sign-in">Sign In</a>
+                                <i class="fas fa-user"></i><a href="/signin" class="btn btn-warning signin-btn">Sign In</a>
                             </li>
                 
                             <li class="nav-item">
-                                <a href="/"><button type="button" class="btn btn-warning signin-btn">Sign Up</button></a>
+                                <a href="/signup"><button type="button" class="btn btn-warning signin-btn">Sign Up</button></a>
                             </li>
                             </ul>
                     </div>
@@ -59,11 +59,11 @@
 
     <div class="grid-container">
         <div class="description-left-side">
-            <h2>Minfull Journey</h2>
+            <h2>Mindful Journey</h2>
             <p>Taking steps to be the best You!</p>
 
         </div>
-            <img src="{{ url_for('static', filename='images/shashi-chaturvedula-FjYwhowyp6k-unsplash.jpg') }}" width="600px" height="300px">
+            <img class="mainimg" src="{{ url_for('static', filename='images/meditation.png') }}">
             <img src="{{ url_for('static', filename='images/brett-jordan-qF_KGJbgsOo-unsplash.jpg') }}" width="600px" height="300px">
         <div class="description-right-side">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit explicabo animi deleniti omnis minima expedita voluptatibus molestiae earum quae,
         hic et nesciunt aperiam, veniam, harum amet! Iusto, voluptatem amet.</div>
