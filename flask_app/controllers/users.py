@@ -25,3 +25,18 @@ def register_user():
 def page_to_login_user():
     return render_template("login.html")
 
+@app.route("/users/login", methods=['POST'])
+def login(): 
+    if user.User.login(request.form): 
+        return redirect("/users/dashboard")
+    return redirect('/')
+
+#route for login/registration to take to dashboard
+@app.route("/users/dashboard")
+def user_dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/logout")
+def logout():
+    session.clear()
+    return redirect('/')
