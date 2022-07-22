@@ -20,7 +20,7 @@ def register_user():
         return redirect('/users/dashboard')
     return redirect ("/signup")
 
-
+#login routes to get user to dashboard
 @app.route('/login')
 def page_to_login_user():
     return render_template("login.html")

@@ -101,7 +101,7 @@ class User:
 
 #static method for parsed data to hashed our password (the data coming from form are plain as we inserted and to hash the password before passing it to db ,we need to hash it so, it will appear as a random charecters in db , to do so will create pased function with parsed empty dictionary like below:)
     @staticmethod
-    def parse_regestration_data(data):
+    def parse_registration_data(data):
         parsed_data={}
         parsed_data['email']=data['email'].lower()#the data I give you find the key and set its value
         parsed_data['password']=bcrypt.generate_password_hash(data['password'])
