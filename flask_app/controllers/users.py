@@ -10,15 +10,15 @@ def home():
     return render_template('home.html')
 
 #create user
-@app.route('/register')
+@app.route('/signup')
 def page_to_register_user():
-    return render_template("register.html")
+    return render_template("signup.html")
 
 @app.route("/create/user", methods=["POST"])
 def register_user():
     if user.User.create_user(request.form):
         return redirect('/users/dashboard')
-    return redirect ("/register")
+    return redirect ("/signup")
 
 
 
