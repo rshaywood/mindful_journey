@@ -6,6 +6,7 @@ from flask import flash,session
 import re
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app) 
+PASSWORD_REGEX=re.compile(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$")
 
 
 
@@ -93,18 +94,18 @@ class User:
         if User.get_user_by_email(data['email'].lower()):#lower function here for preventing duplicate emails if we insert by mistake uppercase and lower case , so in this case all leteeres will converted to uppercase.
             flash("Email already in use, insert another email adress")
             is_valid=False
-        #validat first_name to make sure it is more than 3 chareters
+        #validate first_name to make sure it is more than 3 chareters
         if len(data['first_name']) < 3:
             flash("first_Name must be at least 3 or more characters.")
             is_valid = False
-        #validata last_name to make sure it is 3 charecters or more than 3 chareters
+        #validate last_name to make sure it is 3 charecters or more than 3 chareters
         if len(data['last_name']) < 3:
             flash("last_name must be at least 3 or more characters.")
             is_valid = False
-        #validate password to make sure its more than 8 charecters
-        if len(data['password'])<8:
-            flash("your password must contain at least 8 charecters")
-            is_valid=False
+        #validate password to make sure it fits REGEX
+        if not PASSWORD_REGEX.match(data["password"]):
+            flash("Your password must be 8 characters and contain at least one uppercase letter, a number, and a lowercase letter")
+            is_valid = False
         #validate password again to make sure it matches the confirm password
         if data['password']!=data['confirm_password']:
             flash("password do not match")
