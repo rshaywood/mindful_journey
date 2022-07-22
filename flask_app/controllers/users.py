@@ -21,4 +21,7 @@ def register_user():
     return redirect ("/signup")
 
 
+@app.route('/login')
+def page_to_login_user():
+    return render_template("login.html")
 
