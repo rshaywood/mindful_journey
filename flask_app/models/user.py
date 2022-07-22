@@ -22,7 +22,7 @@ class User:
         self.updated_at = data['updated_at']
         # self.activites=[]
 
-    #CREATE ----SQL----MODELS
+#CREATE ----SQL----MODELS
     @classmethod 
     def create_user(cls, data):
         if not cls.validate_user_reg_data(data):
@@ -39,15 +39,37 @@ class User:
             session["user_id"] = user_id
             return user_id
 
+#READ ----SQL----MODELS
+
+    @classmethod
+    def get_user_by_id(cls, id):
+        data = {'id' : id}
+        query = """
+        SELECT * FROM users
+        WHERE id = %(id)s
+        ;"""
+        result = connectToMySQL(cls.db).query_db(query, data)
+        if result:
+            result = cls(result[0])
+        return result
+
+    @classmethod
+    def get_user_by_email(cls, email):
+        data = {'email' : email}
+        query = """
+        SELECT * FROM users
+        WHERE email = %(email)s
+        ;"""
+        result = connectToMySQL(cls.db).query_db(query, data)
+        if result:
+            result = cls(result[0])
+        return result
 
 
-    #READ ----SQL----MODELS
+#UPDATE ----SQL----MODELS
 
 
-    #UPDATE ----SQL----MODELS
-
-
-    #DELETE ----SQL----MODELS
+#DELETE ----SQL----MODELS
 
 
 
@@ -57,6 +79,7 @@ class User:
 
 
 #static method for valdiation USER
+
     @staticmethod
     def validate_user_reg_data(data):
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') #this regulaer exp for making sure the email must have charecters like letters and @ nd dot ...etc
