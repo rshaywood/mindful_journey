@@ -6,5 +6,9 @@ from flask_app.models import user,goal,activity
 
 @app.route('/dashboard')
 def show_goals():
-    this_user = user.User.
+    user_goals = goal.Goal.get_all_user_goals({"user_id":session['user_id']})
+    this_user = user.User.get_user_by_id(session['user_id'])
+    return render_template('dashboard.html', this_user=this_user, user_goals=user_goals)
+
+
 
