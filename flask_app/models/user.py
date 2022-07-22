@@ -23,6 +23,21 @@ class User:
         # self.activites=[]
 
     #CREATE ----SQL----MODELS
+    @classmethod 
+    def create_user(cls, data):
+        if not cls.validate_user_reg_data(data):
+            return False
+        else:
+            data = cls.parse_registration_data(data)
+            query = """
+            INSERT INTO users 
+            (first_name, last_name, email, password)
+            VALUES
+            (%(first_name)s, %(last_name)s, %(email)s, %(password)s)
+            ;"""
+            user_id = connectToMySQL(cls.db).query_db(query,data)
+            session["user_id"] = user_id
+            return user_id
 
 
 
