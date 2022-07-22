@@ -10,7 +10,7 @@ bcrypt = Bcrypt(app)
 
 
 class User:
-    DB='group_project'
+    DB ='group_project'
 
     def __init__(self, data):
         self.id = data['id']
@@ -35,14 +35,25 @@ class User:
             VALUES
             (%(first_name)s, %(last_name)s, %(email)s, %(password)s)
             ;"""
-            user_id = connectToMySQL(cls.db).query_db(query,data)
+            user_id = connectToMySQL(cls.DB).query_db(query,data)
             session["user_id"] = user_id
             return user_id
 
 
 
     #READ ----SQL----MODELS
-
+    @classmethod
+    def get_user_by_email(cls, email):
+        data = {"email" : email}
+        query = """
+        SELECT * 
+        FROM users
+        WHERE email = %(email)s
+        ;"""
+        user = MySQLConnection(cls.DB).query_db(query, data)
+        if user:
+            user = cls(user[0])
+        return user
 
     #UPDATE ----SQL----MODELS
 
@@ -110,7 +121,7 @@ class User:
                 session['first_name']=user.first_name
                 session['last_name']=user.last_name#we stored both first and last name in session so in this case when go to dashboard or edit page , we do not need to calll get user by id and pass it with render template to display it on the screen.
                 return True
-        #if no thing back from method get_user_by_email:
-        flash("invalid email adress or password")
+        #if nothing back from method get_user_by_email:
+        flash("invalid email address or password")
         return False
 
