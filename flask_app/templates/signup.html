@@ -18,7 +18,7 @@
 </head>
 <body>
     <div class="register_container">
-        <form action="/create/user" method="post" class="signup-form">
+        <form action="/create/user" method="post" class="signup-form" enctype="multipart/form-data">
             <h3>Sign Up </h3>
             <div>
                 <label for="first_name">First Name:</label>
@@ -39,6 +39,10 @@
             <div>
                 <label for="password"> Confirm Password:</label>
                 <input type="password" name="confirm_password" class="input">
+            </div>
+            <div>
+                <label for="Upload image">Upload Personal Image</label>
+                <input type="file" name="user_image" id="">
             </div>
                 <button type="submit" class="btn btn-primary signup-btn">Register</button>
                 <div class="conatiner error">

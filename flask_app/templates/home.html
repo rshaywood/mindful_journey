@@ -40,12 +40,14 @@
                         </ul>
                 </div>
             </div>
-              
                     <input type="search" name="search" id="search" placeholder="Search">
                     <div class="right-side-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item signin-link">
-                                <i class="fas fa-user"></i><a href="/login" class="btn btn-warning signin-btn">Sign In</a>
+                                <a href="/login" class="btn btn-warning signin-btn">Sign In</a>
+                            </li>
+                            <li class="nav-item ">
+                                <img src="{{this_user.user_image}}" alt="" class="user_image">
                             </li>
                 
                             <li class="nav-item">

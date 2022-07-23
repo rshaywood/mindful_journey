@@ -19,7 +19,7 @@ class User:
         self.last_name = data['last_name']
         self.email = data['email']
         self.password=data['password']
-        # self.user_image=data['user_image']
+        self.user_image=data['user_image']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         # self.activites=[]
@@ -34,11 +34,12 @@ class User:
             data = cls.parse_registration_data(data)
             query = """
             INSERT INTO users 
-            (first_name, last_name, email, password)
+            (first_name, last_name, email, password,user_image)
             VALUES
-            (%(first_name)s, %(last_name)s, %(email)s, %(password)s)
+            (%(first_name)s, %(last_name)s, %(email)s, %(password)s,%(user_image)s)
             ;"""
             user_id = connectToMySQL(cls.DB).query_db(query,data)
+            print("%%%%%%%%%%%%%%%%%%%%%%%%",user_id)
             session["user_id"] = user_id
             return user_id
 
@@ -129,6 +130,7 @@ class User:
         parsed_data['password']=bcrypt.generate_password_hash(data['password'])
         parsed_data['first_name']=data['first_name']
         parsed_data['last_name']=data['last_name']
+        parsed_data['user_image']=data['user_image']
         return parsed_data
         #now we have to go to top and call this function to hash password before creating user
         

@@ -81,7 +81,7 @@ svg{
 }
 
 .signup-form{
-    /* background-color: #fff; */
+    background-color: #fff;
     width:30%;
     height: 60%;
     display: flex;

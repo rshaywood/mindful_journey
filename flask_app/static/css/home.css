@@ -18,10 +18,23 @@
     align-items: center;
 }
 .left-side-nav ul,.right-side-nav ul,.title{
-    width:300px;
     /* background-color: #20c997; */
     display: flex;
     gap:50px;
+}
+/* left side of nav bar */
+.left-side-nav ul{
+    width:200px;
+
+}
+/* right side of nav bar */
+.right-side-nav ul{
+    width:500px;
+}
+.user_image{
+    width:60px;
+    height: 60px;
+    border-radius: 50%;
 }
 * ul li,li a, .nav-item a, .title a{
     color: #343a40;

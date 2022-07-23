@@ -28,11 +28,20 @@
     align-items: center;
 }
 .left-side-nav ul,.right-side-nav ul,.title{
-    width:300px;
     /* background-color: #20c997; */
     display: flex;
     gap:50px;
 }
+/* left side of nav bar */
+.left-side-nav ul{
+    width:200px;
+
+}
+/* right side of nav bar */
+.right-side-nav ul{
+    width:500px;
+}
+
 * ul li,li a, .nav-item a, .title a{
     color: #343a40;
 }
@@ -59,4 +68,10 @@ a .signin-btn:hover{
     background-color: #2574be;
     color: #343a40;
     border-color:#343a40;
+}
+
+.user_image{
+    width:100px;
+    height:100px;
+    border-radius: 50%;
 }
