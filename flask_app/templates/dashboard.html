@@ -17,7 +17,65 @@
 
 </head>
 <body>
-        dashboard
+    <main>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="title">
+                    <!-- logo here__> -->
+                <a class="navbar-brand title" href="#">MJ Logo</a>
+                
+                <div class="left-side-nav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Learn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Events</a>
+                        </li>
+                        </ul>
+                </div>
+            </div>
+                    <input type="search" name="search" id="search" placeholder="Search">
+                    <div class="right-side-nav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a href="/logout"><button type="button" class="btn btn-warning signin-btn">Sign Out</button></a>
+                            </li>
+                            </ul>
+                    </div>
+            </div>
+            </div>
+        </nav>
+        <h2>Welcome {{session.first_name}} {{session.last_name}} to Your Mindfull Journey</h2>
+        <h3>Taking the steps to be the best You!</h3>
+        <aside>
+            <div class="left_side">
+                <h2>A snapshot of your journal entries</h2>
+            </div>
+
+
+            <div class="right_side">
+                <p>Your Goal:</p>
+                <a href=""><button>Update Goal</button></a>
+                <p>Activities You Selected</p>
+                <button type="button" class="btn btn-secondary">Physical Fitness</button>
+                <button type="button" class="btn btn-secondary">Self-Appreciation</button>
+                <button type="button" class="btn btn-secondary">Meditation</button>
+                <button type="button" class="btn btn-secondary">Anxiety</button>
+                <button type="button" class="btn btn-secondary">Sleep</button>
+                <button type="button" class="btn btn-secondary">Healthy Eating</button>
+                
+                
+
+
+            </div>
+        </aside>
+    </main>
+        <h1></h1>
 <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
