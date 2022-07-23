@@ -14,6 +14,8 @@ class Activity:
         self.comment = data['comment']
         self.feeling_before = data['feeling_before']
         self.feeling_after = data['feeling_after']
+        self.created_at = data['created_at']
+        self.updated_at = data['updated_at']
         self.user_id = data['user_id']
         self.goal_id = data['goal_id']
         self.creator = None  # this for create instance of user
