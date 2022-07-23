@@ -10,10 +10,10 @@ class Goal:
 
     def __init__(self, data):
         self.id = data['id']
+        self.goal_name=data['goal_name']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id=data['user_id']
-        self.creator=None#this for create instance of user
 
     # READ____MODEL____SQL
 
@@ -88,7 +88,7 @@ class Goal:
 
 
     #UPDATE____MODEL____SQL
-
+    
 
 
 

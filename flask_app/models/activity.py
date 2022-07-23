@@ -11,17 +11,19 @@ class Activity:
     def __init__(self, data):
         self.id = data['id']
         self.activity_name = data['activity_name']
-        self.created_at = data['created_at']
-        self.updated_at = data['updated_at']
+        self.comment = data['comment']
+        self.feeling_before = data['feeling_before']
+        self.feeling_after = data['feeling_after']
         self.user_id = data['user_id']
+        self.goal_id = data['goal_id']
         self.creator = None  # this for create instance of user
 
     # #READ____MODEL____SQL
 
     @classmethod
     def save(cls, data):
-        query = """INSERT INTO activities (activity_name, user_id) 
-        VALUES (%(activity_name)s,%(user_id)s);"""
+        query = """INSERT INTO activities (activity_name,comment,feeling_before,feeling_after,user_id,goal_id) 
+        VALUES (%(activity_name)s,%(comment)s,%(feeling_before)s,%(feeling_before)s,%(user_id)s,%(goal_id)s);"""
         return connectToMySQL(cls.DB).query_db(query, data)
 
     # CREATE____MODEL____SQL
