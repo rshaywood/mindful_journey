@@ -18,7 +18,7 @@ class Activity:
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
         self.goal_id = data['goal_id']
-        self.creator = None  # this for create instance of user
+        # self.creator = None  # this for create instance of user
 
     # #READ____MODEL____SQL
 

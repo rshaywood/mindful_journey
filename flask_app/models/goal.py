@@ -24,7 +24,7 @@ class Goal:
         FROM goals
         WHERE user_id = %(user_id)s
         ;"""
-        goals_from_db = connectToMySQL(cls.db).query_db(query, data)
+        goals_from_db = connectToMySQL(cls.DB).query_db(query, data)
         goals = []
         if not goals_from_db:
             return goals_from_db
@@ -39,7 +39,7 @@ class Goal:
         FROM goals
         WHERE id = %(id)s
         ;"""
-        result = connectToMySQL(cls.db).query_db(query, data)
+        result = connectToMySQL(cls.DB).query_db(query, data)
         return cls(result[0])
 
     # @classmethod
@@ -82,13 +82,13 @@ class Goal:
         INSERT INTO goals (goal_name, user_id) 
         VALUES (%(goal_name)s, %(user_id)s)
         ;"""
-        goal_id = connectToMySQL(cls.db).query_db(query,data)
+        goal_id = connectToMySQL(cls.DB).query_db(query,data)
         return goal_id
 
 
 
     #UPDATE____MODEL____SQL
-    
+
 
 
 
@@ -107,7 +107,7 @@ class Goal:
     def validate_goal_info(goal):
         is_valid = True
         query = "SELECT * FROM goals WHERE id = %(id)s;"
-        results = connectToMySQL(Goal.db).query_db(query, goal)
+        results = connectToMySQL(Goal.DB).query_db(query, goal)
         print(results)
         if not goal['goal_name']:
             flash("Name of goal must be least 3 characters.","create_goal")

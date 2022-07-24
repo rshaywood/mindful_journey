@@ -69,10 +69,12 @@ i.fas{
 /* style grid container */
 .grid-container{
 width:95% ;
+height:50vh;
 margin: 0 auto;
 /* background-color: beige; */
 display: grid;
 grid-template-columns: 600px 600px;
+align-items: center;
 justify-items: stretch;
 gap:20px;
 }

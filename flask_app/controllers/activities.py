@@ -12,20 +12,20 @@ def new_activity():
     data = {
         "id": session['user_id']
     }
-    return render_template('new_activity.html', user=User.get_by_id(data))
+    return render_template('add_activity.html', user=User.get_by_id(data))
 
 
 @app.route('/create/activity', methods=['POST'])
 def create_activity():
     if 'user_id' not in session:
         return redirect('/logout')
-    if not activity.Activity.validate_workout(request.form):
+    if not activity.Activity.validate_activity(request.form):
         return redirect('/new/activity')
-    data = {
-        "activity_name": request.form["activity_name"],
-        "user_id": session["user_id"]
-    }
-    activity.Activity.save(data)
+    # data = {
+    #     "activity_name": request.form["activity_name"],
+    #     "user_id": session["user_id"]
+    # }
+    activity.Activity.save(request.form)
     return redirect('/dashboard')
 
 
