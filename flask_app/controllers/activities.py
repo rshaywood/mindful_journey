@@ -20,7 +20,7 @@ def create_activity():
     if 'user_id' not in session:
         return redirect('/logout')
     if not activity.Activity.validate_activity(request.form):
-        return redirect('/new/activity')
+        return redirect('/add/activity')
     # data = {
     #     "activity_name": request.form["activity_name"],
     #     "user_id": session["user_id"]
