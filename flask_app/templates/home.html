@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!-- google font link -->
-    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <!-- google font link -->
+    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto&family=Rubik+Moonrocks&display=swap"
+        rel="stylesheet">
     <!-- css link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
     <!-- bootstrap5 link -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<!--font awsome icon link-->
-<script src="https://kit.fontawesome.com/df5aa5937e.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <!--font awsome icon link-->
+    <script src="https://kit.fontawesome.com/df5aa5937e.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
     <div class="hero-section">
         <!--  navigation bar -->
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <div class="title">
-                    <!-- logo here__> -->
-                <img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="50px" height="50px">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <div class="title">
+                        <!-- logo here__> -->
+                        <img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="50px" height="50px">
 
-                <a class="navbar-brand title" href="#">MJ Logo</a>
-                <div class="left-side-nav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Learn</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Events</a>
-                        </li>
-                        </ul>
-                </div>
-            </div>
+                        <a class="navbar-brand title" href="#">MJ Logo</a>
+                        <div class="left-side-nav">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Learn</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Events</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                     <input type="search" name="search" id="search" placeholder="Search">
                     <div class="right-side-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -50,32 +58,36 @@
                             <li class="nav-item ">
                                 <img src="{{this_user.user_image}}" alt="" class="user_image">
                             </li>
-                
+
                             <li class="nav-item">
-                                <a href="/signup"><button type="button" class="btn btn-warning signin-btn">Sign Up</button></a>
+                                <a href="/signup"><button type="button" class="btn btn-warning signin-btn">Sign
+                                        Up</button></a>
                             </li>
-                            </ul>
+                        </ul>
                     </div>
-            </div>
+                </div>
             </div>
         </nav>
 
-    <div class="grid-container">
-        <div class="description-left-side">
-            <h2>Mindful Journey</h2>
-            <p>Taking steps to be the best You!</p>
+        <div class="grid-container">
+            <div class="description-left-side">
+                <h2>Mindful Journey</h2>
+                <p>Taking steps to be the best You!</p>
 
-        </div>
+            </div>
             <img class="mainimg" src="{{ url_for('static', filename='images/meditation.png') }}">
-            <img src="{{ url_for('static', filename='images/brett-jordan-qF_KGJbgsOo-unsplash.jpg') }}" width="600px" height="300px">
-        <div class="description-right-side">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur fugit explicabo animi deleniti omnis minima expedita voluptatibus molestiae earum quae,
-        hic et nesciunt aperiam, veniam, harum amet! Iusto, voluptatem amet.</div>
-    </div>
+            <img src="{{ url_for('static', filename='images/brett-jordan-qF_KGJbgsOo-unsplash.jpg') }}" width="600px"
+                height="300px">
+            <div class="description-right-side">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+                fugit explicabo animi deleniti omnis minima expedita voluptatibus molestiae earum quae,
+                hic et nesciunt aperiam, veniam, harum amet! Iusto, voluptatem amet.</div>
+        </div>
 
 
 
     </div>
-<!-- java script link -->
+    <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
+
 </html>
