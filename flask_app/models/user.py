@@ -1,7 +1,7 @@
 
 from flask_app.config.mysqlconnection import MySQLConnection,connectToMySQL
 from flask_app import app
-from flask_app.models import activity,goal
+from flask_app.models import activity
 from flask import flash,session
 import re
 from flask_bcrypt import Bcrypt

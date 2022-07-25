@@ -1,7 +1,7 @@
 
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models import user, goal, activity
+from flask_app.models import user, activity
 import os
 # these two lines for uploading image for user to db and retrieve it as well
 from werkzeug.utils import secure_filename
