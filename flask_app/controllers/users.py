@@ -67,9 +67,10 @@ def login():
 
 @app.route("/users/dashboard")
 def user_dashboard():
-    # this gets user's image from db //go to dashboard and check     <img src="{{this_user.user_image}}" alt="" class="user_image">
+    # this for retreiving user's imag from db //go to dashboard and check     <img src="{{this_user.user_image}}" alt="" class="user_image">
+    activities= activity.Activity.get_all({"user_id":session['user_id']})
     this_user = user.User.get_user_by_id(session['user_id'])
-    return render_template("dashboard.html", this_user=this_user)
+    return render_template("dashboard.html", this_user=this_user, activities=activities)
 
 
 @app.route("/logout")
