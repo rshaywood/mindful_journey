@@ -53,12 +53,11 @@
                     <div class="right-side-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item signin-link">
-                                <a href="/login" class="btn btn-warning signin-btn">Sign In</a>
+                                <a href="/login">Contact Us</a>
                             </li>
-                            <li class="nav-item ">
-                                <img src="{{this_user.user_image}}" alt="" class="user_image">
+                            <li class="nav-item signin-link">
+                                <a href="/login">Sign In</a>
                             </li>
-
                             <li class="nav-item">
                                 <a href="/signup"><button type="button" class="btn btn-warning signin-btn">Sign
                                         Up</button></a>
@@ -70,15 +69,15 @@
         </nav>
 
         <div class="grid-container">
-            <div class="description-left-side">
+            <div class="description side">
                 <h2>Mindful Journey</h2>
                 <p>Taking steps to be the best You!</p>
-
             </div>
-            <img class="mainimg" src="{{ url_for('static', filename='images/meditation.png') }}">
-            <img src="{{ url_for('static', filename='images/brett-jordan-qF_KGJbgsOo-unsplash.jpg') }}" width="600px"
-                height="300px">
-            <div class="description-right-side">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+            <img class="mainimg" src="{{ url_for('static', filename='images/meditation.png') }}" width="300px"
+            height="300px">
+            <img src="{{ url_for('static', filename='images/mindset-g96504f3be_1920.jpg')}}" width="200px"
+                height="200px">
+            <div class="description side">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
                 fugit explicabo animi deleniti omnis minima expedita voluptatibus molestiae earum quae,
                 hic et nesciunt aperiam, veniam, harum amet! Iusto, voluptatem amet.</div>
         </div>

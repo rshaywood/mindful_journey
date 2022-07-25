@@ -28,6 +28,17 @@
     <form action="/create/activity" method="post">
         <input type="hidden" name="user_id" value="{{session.user_id}}">
         <div>
+            <div class="select_goal">
+                <label for="select_goal">Choose Your Goal:</label>
+                <select name="goal_name">
+                    <option value="">--Select--</option>
+                    <option value="Sleep Better">Sleep Better</option>
+                    <option value="Be More Active">Be More Active</option>
+                    <option value="Diet Helthier">Diet Helthier</option>
+                    <option value="Be More Focus">Be More Focus</option>
+                    <option value="Manage Stress and Anexiety">Manage Stress and Anexiety</option>
+                </select>
+            </div>
             <label for="activity_name">Activity_name :</label>
             <input type="text" name="activity_name">
         </div>
@@ -43,14 +54,7 @@
                 {% endfor %}
             </select>
         </div>
-        <div>
-            <label for="feeling_after">Feeling_after: </label>
-            <select name="feeling_after" >
-                {% for index in range(10)%}
-                    <option value="{{index}}">{{index}}</option>
-                {% endfor %}
-            </select>
-        </div>
+          
         <button type="submit" class="btn btn-primary">Add Activity</button>
 
         <div class="conatiner error">

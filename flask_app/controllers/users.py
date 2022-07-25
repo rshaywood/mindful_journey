@@ -1,7 +1,7 @@
 
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
-from flask_app.models import user, goal, activity
+from flask_app.models import user, activity
 import os
 # these two lines for uploading image for user to db and retrieve it as well
 from werkzeug.utils import secure_filename
@@ -11,8 +11,11 @@ from werkzeug.utils import secure_filename
 @app.route("/")
 def home():
     # for showing user's image in main page
-    this_user = user.User.get_user_by_id(session['user_id'])
-    return render_template('home.html', this_user=this_user)
+    # data={
+    #         'id':session['user_id']
+    # }
+    # this_user = user.User.get_user_by_id(data)
+    return render_template('home.html')
 
 # create user
 
@@ -57,7 +60,7 @@ def page_to_login_user():
 def login():
     if user.User.login(request.form):
         return redirect("/users/dashboard")
-    return redirect('/')
+    return redirect('/login')
 
 # route for login/registration to take to dashboard
 

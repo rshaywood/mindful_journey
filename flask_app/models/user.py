@@ -1,7 +1,7 @@
 
 from flask_app.config.mysqlconnection import MySQLConnection,connectToMySQL
 from flask_app import app
-from flask_app.models import activity,goal
+from flask_app.models import activity
 from flask import flash,session
 import re
 from flask_bcrypt import Bcrypt
@@ -112,6 +112,7 @@ class User:
         if len(data['password']) < 8:
             flash("password must be at least 8 or more characters.")
             is_valid = False
+            
         # if not PASSWORD_REGEX.match(data['password']) :
         #     flash("Your password must be 8 characters and contain at least one uppercase letter, a number, and a lowercase letter")
         #     is_valid = False

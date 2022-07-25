@@ -6,26 +6,28 @@
 
 .login,.register_container{
     height: 100vh;
-    background-image: url("../images/nick-page-IKFb6MqM8m8-unsplash.jpg");
+    background-image: url("../images/mental-health-gd1b43a6ca_1920.png");
     background-size:cover;
-    background-position:center;
+    /* background-position:center; */
     width:100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-end;
 }
 /* style login form */
 .login-form{
-    /* background-color:#fff; */
+    /* background-color:rgb(167, 72, 72); */
     width:500px;
-    height:300px;
+    height:400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap:10px;
+ 
     /* background-color: aquamarine; */
 }
+
 #email, #password,.input{
     height:30px;
     width:200px;
@@ -39,6 +41,7 @@
     height:30px;
     border-radius: 5px;
     cursor: pointer;
+    align-self: center;
 }
 .email-section,.password-section{
     /* background-color: blue; */
@@ -70,25 +73,23 @@ svg{
 .register_container{
     width:85%;
     height:100vh;
-    margin:20px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap:20px;
     background-color: gray;
   
 
 }
+h2{
+   align-self: center;
+}
 
 .signup-form{
-    background-color: #fff;
-    width:30%;
-    height: 60%;
+    /* background-color: rgb(83, 56, 56); */
+    padding:60px;
+    /* margin-left: 400px; */
+    width:50%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* justify-content: center;
-    align-items: center; */
     gap:10px;
 }
 .signup-form  div{
@@ -96,16 +97,20 @@ svg{
     justify-content:space-between;
     gap:5px;
     /* background-color: red; */
-    
-    
+
 }
 button.signup-btn{
-    background-color:gray;
-}
-/* .signup-btn:hover{
-    background-color: #f2b441
-} */
+    width:150px;
+    align-self: center;
+    background-color: black;
+ }
+ button.signup-btn:hover{
+    background-color: rgb(43, 40, 40);
+ }
 .input{
     width:60%;
     padding-left: 10px;
+}
+.error ul li{
+    background-color: rgb(136, 133, 133);
 }

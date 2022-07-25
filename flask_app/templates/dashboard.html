@@ -51,11 +51,13 @@
                     <div class="right-side-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a href="/logout"><button type="button" class="btn btn-warning signin-btn">Sign
-                                        Out</button></a>
+                                <a href="/logout"><button type="button" class="btn btn-warning signin-btn">Sign Out</button></a>
                             </li>
                             <li class="nav-item">
                                 <a href="/"><button type="button" class="btn btn-warning signin-btn">Home</button></a>
+                            </li>
+                            <li class="nav-item">
+                                {{session.first_name}} {{session.last_name}}
                             </li>
                             <li class="nav-item">
                                 <!-- user image from db -->
@@ -88,7 +90,7 @@
             </div>
         </aside>
     </main>
-    <h1></h1>
+    <a href="/new/activity"><button>Add Activity</button></a>
     <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>

@@ -10,7 +10,7 @@
     
 }
 .collapse{
-    background-color: #ced4da;
+    background-color: #C3DFE9;
     padding: 5px 20px 5px 20px;
     display: flex;
     justify-content: space-between;
@@ -68,25 +68,26 @@ i.fas{
 
 /* style grid container */
 .grid-container{
-width:95% ;
-height:50vh;
+width:60% ;
+height:400px;
+padding: 20px;
 margin: 0 auto;
 /* background-color: beige; */
 display: grid;
-grid-template-columns: 600px 600px;
-align-items: center;
-justify-items: stretch;
-gap:20px;
+grid-template-columns: 400px 400px;
+align-items:center;
+justify-content: center;
+/* gap:200px; */
+column-gap: 150px;
 }
  a .signin-btn{
-    background-color: #0ca678;
-    color: #343a40;
+    background-color:#323C83;
+    color: #fff;
     padding: 5px 20px;
     border-color:#343a40;
-
 }
 a .signin-btn:hover{
-    background-color: #20c997;
-    color: #343a40;
+    background-color:#3c4799;
+    color:#fff;
     border-color:#343a40;
 }

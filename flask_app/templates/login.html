@@ -17,6 +17,7 @@
 
 </head>
 <body>
+
     <div class="login">
         <form action="/users/login" method="post" class="login-form">
             <h2>Sign In</h2>
@@ -38,21 +39,21 @@
         </div>
         <div>
             <input type="submit" value="Sign In" id="signin">
-            <div class="conatiner error">
-                <ul>
-                    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
-                    {% if messages %}                            <!-- check if there are any messages -->
-                    {% for message in messages %}            <!-- loop through the messages -->
-                        <li>{{message}}</li><!-- display each message in a paragraph tag -->
-                        {% endfor %}
-                    {% endif %}
-                    {% endwith %}
-                </ul>
-            </div>
         </div>
         <div class="register">
             <p>Don't have an account?</p>
             <a href="/signup">Register</a>
+        </div>
+        <div class="conatiner error">
+            <ul>
+                {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <li>{{message}}</li><!-- display each message in a paragraph tag -->
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </ul>
         </div>
         </form>
         </div>
