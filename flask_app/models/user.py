@@ -22,7 +22,11 @@ class User:
         self.user_image=data['user_image']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        # self.activites=[]
+<<<<<<< HEAD
+        self.activites=[]
+=======
+        self.activities=[]
+>>>>>>> 115e04275a157accb17ba04d528d13bcab75d5f7
 
 #CREATE ----SQL----MODELS
 
