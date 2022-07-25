@@ -34,11 +34,37 @@ class Activity:
     def get_all(cls, data):
         query = "SELECT * FROM activities WHERE user_id=%(user_id)s;"
         results = connectToMySQL(cls.DB).query_db(query, data)
-        Activities = []
+        activities = []
         for row in results:
             # print("*******************", row)
-            Activities.append(row)
-        return Activities
+            activities.append(row)
+        return activities
+
+    # @classmethod
+    # def get_a_users_with_activities(cls):
+    #     query = """
+    #     SELECT * FROM activities
+    #     LEFT JOIN users
+    #     ON users.id = activities.users_id
+    #     ;"""
+    #     result = connectToMySQL(cls.DB).query_db(query)
+    #     Activities = []
+    #     for db_row_activities in result:
+    #         user_activities = cls(db_row_activities)
+    #         activity_dictionary={
+    #             "id" : db_row_activities["users.id"],
+    #             "first_name":db_row_activities['first_name'],
+    #             "last_name": db_row_activities['last_name'],
+    #             'email': db_row_activities['email'], 
+    #             'password': db_row_activities['password'],
+    #             'user_image': db_row_activities["user_image"],
+    #             'created_at': db_row_activities["users.created_at"], 
+    #             'updated_at': db_row_activities["users.updated_at"],
+    #         }
+    #         user_activities.activity_name = user.User(activity_dictionary)
+    #         print("*******************",activity_dictionary)
+    #         Activities.append(user_activities)
+    #     return Activities
 
     @classmethod
     def get_one_activity(cls, data):
