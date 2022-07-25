@@ -73,24 +73,33 @@
         <h3>Taking the steps to be the best You!</h3>
         <aside>
             <div class="left_side">
-                <h2>A snapshot of your journal entries</h2>
+                <h2>Your Goal:</h2>
+<!-- jinja for goal will go in this p tag below. -->
+                <p>Sleep Better</p>
             </div>
-
-
             <div class="right_side">
-                <p>Your Goal:</p>
-                <a href=""><button>Update Goal</button></a>
-                <p>Activities You Selected</p>
-                <button type="button" class="btn btn-secondary">Physical Fitness</button>
+                <p>A snapshot of your journal entries</p>
+                <table id="activities">
+                    <tr>
+                        <th>Name</th>
+                    </tr>
+<!-- query to display only activity name for that user will display in table below. -->
+                    {% for activity in activities %}    
+                    <tr>
+                        <td>{{activity.activity_name}}</td>
+                    {% endfor %}
+                    </tr> 
+                </table>
+                <!-- <button type="button" class="btn btn-secondary">Physical Fitness</button>
                 <button type="button" class="btn btn-secondary">Self-Appreciation</button>
                 <button type="button" class="btn btn-secondary">Meditation</button>
                 <button type="button" class="btn btn-secondary">Anxiety</button>
                 <button type="button" class="btn btn-secondary">Sleep</button>
-                <button type="button" class="btn btn-secondary">Healthy Eating</button>
+                <button type="button" class="btn btn-secondary">Healthy Eating</button> -->
             </div>
         </aside>
     </main>
-    <a href="/new/activity"><button>Add Activity</button></a>
+    <a href="/new/activity"><button>View Activity Journal Entries</button></a>
     <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
