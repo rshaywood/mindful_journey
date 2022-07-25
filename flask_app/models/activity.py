@@ -20,7 +20,7 @@ class Activity:
         self.user_id = data['user_id']
         # self.creator = None  # this for create instance of user
 
-    # #READ____MODEL____SQL
+# #READ____MODEL____SQL
 
     @classmethod
     def save(cls, data):
@@ -30,27 +30,35 @@ class Activity:
         print("%%%%%%%%%%%%%%%",result)
         return result
 
-    # CREATE____MODEL____SQL
     @classmethod
-    def get_all(cls):
-        query = "SELECT * FROM activities;"
-        results = connectToMySQL(cls.DB).query_db(query)
+    def get_all(cls, data):
+        query = "SELECT * FROM activities WHERE user_id=%(user_id)s;"
+        results = connectToMySQL(cls.DB).query_db(query, data)
         Activities = []
         for row in results:
-            print(row['activity_name'])
-            Activities.append(cls(row))
+            # print("*******************", row)
+            Activities.append(row)
         return Activities
 
     @classmethod
-    def get_one(cls, data):
+    def get_one_activity(cls, data):
         query = "SELECT * FROM activities WHERE id = %(id)s;"
         results = connectToMySQL(cls.DB).query_db(query, data)
         return cls(results[0])
 
+    @classmethod
+    def get_one_goal(cls, data):
+        query = "SELECT goal_name FROM activities WHERE id = %(id)s;"
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        return cls(result[0])
+
+    # CREATE____MODEL____SQL
+
+
     # UPDATE____MODEL____SQL
 
     @classmethod
-    def update(cls, data):
+    def update_activity(cls, data):
         query = """UPDATE activities SET goal_name=%(goal_name)s,activity_name=%(activity_name)s,comment=%(comment)s,feeling_before=%(feeling_before)s WHERE id = %(id)s;"""
         return connectToMySQL(cls.DB).query_db(query, data)
 
