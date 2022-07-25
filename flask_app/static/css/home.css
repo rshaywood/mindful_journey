@@ -10,7 +10,7 @@
     
 }
 .collapse{
-    background-color: #ced4da;
+    background-color: #C3DFE9;
     padding: 5px 20px 5px 20px;
     display: flex;
     justify-content: space-between;
@@ -85,10 +85,9 @@ column-gap: 150px;
     color: #fff;
     padding: 5px 20px;
     border-color:#343a40;
-
 }
 a .signin-btn:hover{
-    background-color: #20c997;
-    color: #343a40;
+    background-color:#3c4799;
+    color:#fff;
     border-color:#343a40;
 }
