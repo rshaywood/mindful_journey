@@ -60,7 +60,7 @@ def page_to_login_user():
 def login():
     if user.User.login(request.form):
         return redirect("/users/dashboard")
-    return redirect('/')
+    return redirect('/login')
 
 # route for login/registration to take to dashboard
 
