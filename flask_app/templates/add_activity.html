@@ -34,9 +34,9 @@
                     <option value="">--Select--</option>
                     <option value="Sleep Better">Sleep Better</option>
                     <option value="Be More Active">Be More Active</option>
-                    <option value="Diet Helthier">Diet Helthier</option>
-                    <option value="Be More Focus">Be More Focus</option>
-                    <option value="Manage Stress and Anexiety">Manage Stress and Anexiety</option>
+                    <option value="Healthier Diet">Healthier Diet</option>
+                    <option value="Be More Focused">Be More Focused</option>
+                    <option value="Manage Stress and Anxiety">Manage Stress and Anxiety</option>
                 </select>
             </div>
             <label for="activity_name">Activity_name :</label>
@@ -47,14 +47,21 @@
             <textarea name="comment" cols="30" rows="10"></textarea>
         </div>
         <div>
-            <label for="feeling_before">Feeling_before: </label>
+            <label for="feeling_before">Feeling Before: </label>
             <select name="feeling_before">
                 {% for index in range(10)%}
                 <option value="{{index}}">{{index}}</option>
                 {% endfor %}
             </select>
         </div>
-          
+        <div>
+            <label for="feeling_after">Feeling After:</label>
+            <select name="feeling_after">
+                {% for index in range(10)%}
+                <option value="{{index}}">{{index}}</option>
+                {% endfor %}
+            </select>
+        </div>
         <button type="submit" class="btn btn-primary">Add Activity</button>
 
         <div class="conatiner error">
