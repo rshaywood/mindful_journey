@@ -114,3 +114,60 @@ button.signup-btn{
 .error ul li{
     background-color: rgb(136, 133, 133);
 }
+
+/* navigation bar */
+.navbar{
+    width: 100%;
+    margin: 0 auto;
+    
+}
+.collapse{
+    background-color: #ced4da;
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    align-items: center;
+}
+.left-side-nav ul,.right-side-nav ul,.title{
+    /* background-color: #20c997; */
+    display: flex;
+    gap:50px;
+}
+/* left side of nav bar */
+.left-side-nav ul{
+    width:200px;
+
+}
+/* right side of nav bar */
+.right-side-nav ul{
+    width:500px;
+}
+
+* ul li,li a, .nav-item a, .title a{
+    color: #343a40;
+}
+ .nav-item a, .title a:hover{
+    color: #343a40;
+}
+
+.navbar-nav{
+    padding-right: 20px;
+    width:70%;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:15px;
+}
+a .signin-btn{
+    background-color: #339af0;
+    color: #343a40;
+    padding: 5px 20px;
+    border-color:#343a40;
+
+}
+a .signin-btn:hover{
+    background-color: #2574be;
+    color: #343a40;
+    border-color:#343a40;
+}
