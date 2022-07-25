@@ -11,8 +11,11 @@ from werkzeug.utils import secure_filename
 @app.route("/")
 def home():
     # for showing user's image in main page
-    this_user = user.User.get_user_by_id(session['user_id'])
-    return render_template('home.html', this_user=this_user)
+    # data={
+    #         'id':session['user_id']
+    # }
+    # this_user = user.User.get_user_by_id(data)
+    return render_template('home.html')
 
 # create user
 

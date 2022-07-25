@@ -10,6 +10,7 @@ class Activity:
 
     def __init__(self, data):
         self.id = data['id']
+        self.goal_name = data['goal_name']
         self.activity_name = data['activity_name']
         self.comment = data['comment']
         self.feeling_before = data['feeling_before']
@@ -17,16 +18,17 @@ class Activity:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         self.user_id = data['user_id']
-        self.goal_id = data['goal_id']
         # self.creator = None  # this for create instance of user
 
     # #READ____MODEL____SQL
 
     @classmethod
     def save(cls, data):
-        query = """INSERT INTO activities (activity_name,comment,feeling_before,feeling_after,user_id,goal_id) 
-        VALUES (%(activity_name)s,%(comment)s,%(feeling_before)s,%(feeling_before)s,%(user_id)s,%(goal_id)s);"""
-        return connectToMySQL(cls.DB).query_db(query, data)
+        query = """INSERT INTO activities (goal_name,activity_name,comment,feeling_before,user_id) 
+        VALUES (%(goal_name)s,%(activity_name)s,%(comment)s,%(feeling_before)s,%(user_id)s);"""
+        result=connectToMySQL(cls.DB).query_db(query, data)
+        print("%%%%%%%%%%%%%%%",result)
+        return result
 
     # CREATE____MODEL____SQL
     @classmethod
@@ -49,7 +51,7 @@ class Activity:
 
     @classmethod
     def update(cls, data):
-        query = """UPDATE activities SET activity_name=%(activity_name)s, updated_at=NOW() WHERE id = %(id)s;"""
+        query = """UPDATE activities SET goal_name=%(goal_name)s,activity_name=%(activity_name)s,comment=%(comment)s,feeling_before=%(feeling_before)s WHERE id = %(id)s;"""
         return connectToMySQL(cls.DB).query_db(query, data)
 
     # DELETE____MODEL____SQL
@@ -67,4 +69,10 @@ class Activity:
         if len(activity['activity_name']) < 3:
             is_valid = False
             flash("Name must be at least 3 characters", "activity")
+        if not (activity['goal_name']) :
+            is_valid = False
+            flash("You must choose a goal")
+        if not (activity['comment']) :
+            is_valid = False
+            flash("Comment must be at least 3 characters ")
         return is_valid
