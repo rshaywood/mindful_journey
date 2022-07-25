@@ -43,12 +43,13 @@
                 {% endfor %}
             </select>
         </div>
-        <label for="feeling_after">Feeling_after: </label>
-        <select name="feeling_after">
-            {% for index in range(10)%}
-            <option value="{{index}}">{{index}}</option>
-            {% endfor %}
-        </select>
+        <div>
+            <label for="feeling_after">Feeling_after: </label>
+            <select name="feeling_after" >
+                {% for index in range(10)%}
+                    <option value="{{index}}">{{index}}</option>
+                {% endfor %}
+            </select>
         </div>
         <button type="submit" class="btn btn-primary">Add Activity</button>
 

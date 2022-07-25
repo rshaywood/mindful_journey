@@ -1,7 +1,7 @@
 
 from flask_app import app
-from flask import render_template,redirect,request,session, flash
-from flask_app.models import user,goal,activity
+from flask import render_template, redirect, request, session, flash
+from flask_app.models import user, goal, activity
 from flask_app.models.user import User
 
 
@@ -9,10 +9,10 @@ from flask_app.models.user import User
 def new_activity():
     if 'user_id' not in session:
         return redirect('/logout')
-    data = {
-        "id": session['user_id']
-    }
-    return render_template('add_activity.html', user=User.get_by_id(data))
+   # data = {
+       # "id": session['user_id']
+    # }
+    return render_template('add_activity.html')
 
 
 @app.route('/create/activity', methods=['POST'])
@@ -20,7 +20,7 @@ def create_activity():
     if 'user_id' not in session:
         return redirect('/logout')
     if not activity.Activity.validate_activity(request.form):
-        return redirect('/new/activity')
+        return redirect('/add/activity')
     # data = {
     #     "activity_name": request.form["activity_name"],
     #     "user_id": session["user_id"]
@@ -78,4 +78,3 @@ def destroy_activity(id):
     }
     activity.Activity.destroy(data)
     return redirect('/dashboard')
-
