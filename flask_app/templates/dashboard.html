@@ -69,22 +69,20 @@
             </div>
         </nav>
 
-        <h2>Welcome {{session.first_name}} {{session.last_name}} to Your Mindfull Journey</h2>
+        <h2>Welcome to Your Mindful Journey, {{session.first_name}}!</h2>
         <h3>Taking the steps to be the best You!</h3>
         <aside>
             <div class="left_side">
-                <h2>Your Goal:</h2>
-<!-- jinja for goal will go in this p tag below. -->
-                <p>Sleep Better</p>
+                <h3>Your Goal:</h3>
+                {% for activity in activities %} 
+                <p>{{activity.goal_name}}</p>
             </div>
             <div class="right_side">
-                <p>A snapshot of your journal entries</p>
+                <h3>A snapshot of your journal entries:</h3>
                 <table id="activities">
                     <tr>
                         <th>Name</th>
                     </tr>
-<!-- query to display only activity name for that user will display in table below. -->
-                    {% for activity in activities %}    
                     <tr>
                         <td>{{activity.activity_name}}</td>
                     {% endfor %}
@@ -99,7 +97,8 @@
             </div>
         </aside>
     </main>
-    <a href="/new/activity"><button>View Activity Journal Entries</button></a>
+    <a href="/new/activity"><button>Add Activity</button></a>
+    <a href="#"><button>View Full Journal Entries</button></a>
     <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>

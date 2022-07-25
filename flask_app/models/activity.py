@@ -32,7 +32,7 @@ class Activity:
 
     @classmethod
     def get_all(cls, data):
-        query = "SELECT activity_name FROM activities WHERE user_id=%(user_id)s;"
+        query = "SELECT * FROM activities WHERE user_id=%(user_id)s;"
         results = connectToMySQL(cls.DB).query_db(query, data)
         Activities = []
         for row in results:
