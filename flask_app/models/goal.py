@@ -89,7 +89,13 @@ class Goal:
 
     #UPDATE____MODEL____SQL
 
-
+    @classmethod
+    def update_goal(cls, data):
+        query = """UPDATE goals
+        SET activity_name=%(goal_name)s, updated_at=NOW()
+        WHERE id = %(id)s
+        ;"""
+        return connectToMySQL(cls.DB).query_db(query, data)
 
 
 
