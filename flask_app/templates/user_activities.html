@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mindful Journey</title>
 <!-- google font link -->
     <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
     <!-- css link -->
@@ -41,14 +41,16 @@
                             </ul>
                         </div>
                     </div>
-                    <input type="search" name="search" id="search" placeholder="Search">
                     <div class="right-side-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li>
+                                <input class="nav-item" type="search" name="search" id="search" placeholder="Search">
+                            </li>
                             <li class="nav-item signin-link">
                                 <a href="#">Contact Us</a>
                             </li>
                             <li class="nav-item signin-link">
-                                <a href="/users/dashboard">dashboard</a>
+                                <a href="/users/dashboard">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a href="/logout"><button type="button" class="btn btn-warning signin-btn">Logout</button></a>
@@ -58,18 +60,23 @@
                 </div>
             </div>
         </nav>
-        <div class ="grid-container">
-            {% for activity in the_journal.activities %} 
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">{{activity.activity_name}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">I was feeling {{activity.feeling_before}} and after I felt</h6>
-                <p class="card-text">{{activity.comment}}</p>
-                <a href="/edit/activity/{{activity.id}}" class="card-link">Edit</a>
-                <a href="/destroy/activity/{{activity.id}}" class="card-link">Delete</a>
+        <h1>Your Progress</h1>
+        <div class ="container">
+            <div class="row">
+                <div class="col">
+                    {% for activity in the_journal.activities %} 
+                    <div class="card my-3" style="width: 80rem;">
+                        <div class="card-body">
+                        <h5 class="card-title">{{activity.activity_name}}</h5>
+                        <h6 class="card-subtitle my-2 text-muted">I was feeling {{activity.feeling_before}} and after I felt</h6>
+                        <p class="card-text">{{activity.comment}}</p>
+                        <a href="/edit/activity/{{activity.id}}" class="card-link">Edit</a>
+                        <a href="/destroy/activity/{{activity.id}}" class="card-link">Delete</a>
+                        </div>
+                    </div>
+                    {% endfor%}
                 </div>
             </div>
-            {% endfor%}
         </div>
 <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>

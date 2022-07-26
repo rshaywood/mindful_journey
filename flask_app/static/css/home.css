@@ -3,6 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+img{
+    width:100px;
+    height:100px;
+}
+
 /* navigation bar */
 .navbar{
     width: 100%;
@@ -29,7 +35,7 @@
 }
 /* right side of nav bar */
 .right-side-nav ul{
-    width:500px;
+    width:600px;
 }
 .user_image{
     width:60px;
@@ -92,5 +98,10 @@ a .signin-btn:hover{
     border-color:#343a40;
 }
 
+h1 {
+    text-align: center;
+}
 
-
+.card-body {
+    border-left: 15px groove #C3DFE9;
+}
