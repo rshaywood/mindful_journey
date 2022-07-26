@@ -22,35 +22,51 @@
 
 </head>
 
+
 <body>
-    <h1>Edit Activity</h1>
-    <hr>
-    <form action="/edit/activity" method="post">
+    <h1>Update Activity</h1>
+
+
+    <form action="/update/activity" method="post">
         <input type="hidden" name="user_id" value="{{session.user_id}}">
         <div>
+            <div class="select_goal">
+                <label for="select_goal">Choose Your Goal:</label>
+                <select name="goal_name">
+                    <option value="{{edit.goal_name}}">{{edit.goal_name}}</option>
+                    <option value="Sleep Better">Sleep Better</option>
+                    <option value="Be More Active">Be More Active</option>
+                    <option value="Healthier Diet">Healthier Diet</option>
+                    <option value="Be More Focused">Be More Focused</option>
+                    <option value="Manage Stress and Anxiety">Manage Stress and Anxiety</option>
+                </select>
+            </div>
             <label for="activity_name">Activity_name :</label>
-            <input type="text" name="activity_name">
+            <input type="text" name="activity_name" value="{{edit.activity_name}}">
         </div>
         <div>
             <label for="comment">Comment: </label>
-            <textarea name="comment" cols="30" rows="10"></textarea>
+            <textarea name="comment" cols="30" rows="10"> {{edit.comment}}</textarea>
         </div>
         <div>
-            <label for="feeling_before">Feeling_before: </label>
+            <label for="feeling_before">Feeling Before: </label>
             <select name="feeling_before">
                 {% for index in range(10)%}
                 <option value="{{index}}">{{index}}</option>
                 {% endfor %}
             </select>
         </div>
-        <label for="feeling_after">Feeling_after: </label>
-        <select name="feeling_after">
-            {% for index in range(10)%}
-            <option value="{{index}}">{{index}}</option>
-            {% endfor %}
-        </select>
+        <img src="https://t4.ftcdn.net/jpg/02/97/10/99/360_F_297109941_q8OZiHb9iRomQ2dD5Q6ozdqvLdILkgNQ.jpg"
+            class="img-fluid" alt="Responsive image">
+        <div>
+            <label for="feeling_after">Feeling After:</label>
+            <select name="feeling_after">
+                {% for index in range(10)%}
+                <option value="{{index}}">{{index}}</option>
+                {% endfor %}
+            </select>
         </div>
-        <button type="submit" class="btn btn-primary">Add Activity</button>
+        <button type="submit" class="btn btn-primary">Update Activity</button>
 
         <div class="conatiner error">
             <ul>
@@ -69,6 +85,8 @@
     <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
+
+</html>
 
 
 </html>
