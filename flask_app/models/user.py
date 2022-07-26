@@ -56,6 +56,32 @@ class User:
         return result
 
 
+    @classmethod
+    def get_activities_by_this_user(cls,data):
+        query="""
+        SELECT * FROM users 
+        LEFT JOIN activities
+        ON users.id=activities.user_id
+        WHERE users.id=%(id)s
+        ;"""
+        result=connectToMySQL(cls.DB).query_db(query,data)
+        print("&&&&&&&&&&&&&&&&&&&& result",result)
+        this_user=cls(result[0])
+        print("mmmmmmm",this_user)
+        for row in result:
+            data={
+                'id':row['activities.id'],
+                'activity_name':row['activity_name'],
+                'goal_name':row['goal_name'],
+                'comment':row['comment'],
+                'feeling_before':row['feeling_before'],
+                'feeling_after':row['feeling_after'],
+                'created_at':row['activities.created_at'],
+                'updated_at':row['activities.updated_at']
+            }
+            this_user.activities.append(activity.Activity(data))
+        return this_user
+
 
     #READ ----SQL----MODELS
     @classmethod

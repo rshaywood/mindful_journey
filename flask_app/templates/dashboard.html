@@ -69,16 +69,13 @@
                 </div>
             </div>
         </nav>
-
+<div class="container-dashboard">
+    <div class="content left_side">
         <h2>Welcome to Your Mindful Journey, {{session.first_name}}!</h2>
         <h3>Taking the steps to be the best You!</h3>
-        <aside>
-            <div class="left_side">
                 <h3>Your Goal:</h3> 
                 {% for activity in latest_activity %}
                 <p>{{activity.goal_name}}</p>
-            </div>
-            <div class="right_side">
                 <h3>Your latest activity to achieve your goal:</h3>
                 <table id="activities">
                     <tr>
@@ -95,11 +92,20 @@
                 <button type="button" class="btn btn-secondary">Anxiety</button>
                 <button type="button" class="btn btn-secondary">Sleep</button>
                 <button type="button" class="btn btn-secondary">Healthy Eating</button> -->
-            </div>
-        </aside>
-    </main>
     <a href="/new/activity"><button>Add Activity</button></a>
     <a href="/journal/{{this_user.id}}"><button>View Full Journal Entries</button></a>
+    </div>
+    <div class="content right_side">
+        <div class="circle-img img1">Anxiety</div>
+        <div class="circle-img img2">Meditation</div>
+        <div class="circle-img img3">Sleep</div>
+        <div class="circle-img img4">Anxiety</div>
+        <div class="circle-img img5"></div>
+        <div class="circle-img img6"></div>
+        <div class="circle-img img7"></div>
+        <div class="circle-img img8"></div>
+    </div>
+</main>
     <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
