@@ -50,6 +50,35 @@ class Activity:
         return result
 
     @classmethod
+    def get_latest_activity(cls, data):
+        query = """
+        SELECT * FROM activities
+        JOIN users
+        ON activities.user_id = users.id
+        ORDER BY activities.id DESC LIMIT 1
+        ;"""
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        # print("^^^^^^^^^^^^^^^^^^^^^", result)
+        activities = []
+        if not result:
+            return result
+        for row in result:
+            new_activity = cls(row)
+            this_creator = {
+                'id': row['users.id'],
+                'first_name': row['first_name'],
+                'last_name': row['last_name'],
+                'email': row['email'],
+                'password': row['password'],
+                'created_at': row['users.created_at'],
+                'updated_at': row['users.updated_at'],
+                "user_image" : row['user_image']
+            }
+            new_activity.creator = user.User(this_creator)
+            activities.append(new_activity)
+        return activities
+
+    @classmethod
     def get_one_goal(cls, data):
         query = "SELECT goal_name FROM activities WHERE id = %(id)s;"
         result = connectToMySQL(cls.DB).query_db(query, data)
