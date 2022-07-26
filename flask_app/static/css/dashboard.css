@@ -75,3 +75,106 @@ a .signin-btn:hover{
     height:100px;
     border-radius: 50%;
 }
+
+
+
+
+.container-dashboard{
+    /* background-color: #ced4da; */
+    width:90%;
+    height: 500px;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.right_side{
+    width:48%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:40px;
+}
+
+.circle-img{
+    width:100px;
+    height:100px;
+    /* background-color: #339af0; */
+    border-radius: 50%;
+    /* border: 1PX solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 3px 3px 3px gray;
+}
+/******************** ANIMATION FOR CIRCLE IMAGES ON DASHBOARD************************** */
+.img1{
+    background-image: url("../images/anatomy-g200a3f688_1280.png");
+    background-size:cover;
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+    align-self: center;
+}
+.img2{
+    background-image: url("../images/aware-g573baaea6_1920.jpg");
+    background-size:cover;
+    -webkit-animation: action 2s infinite  alternate;
+    animation: action 2s infinite  alternate;
+    align-self: center;
+}
+.img3{
+    background-image: url("../images/brain-g2c8f19157_1920.jpg");
+    background-size:cover;
+    -webkit-animation: action 1.5s infinite  alternate;
+    animation: action 1.5s infinite  alternate;
+    align-self: flex-end;
+}
+.img4{
+    background-image: url("../images/question-g2898929a0_1920.jpg");
+    background-size:cover;
+    -webkit-animation: action 1.7s infinite  alternate;
+    animation: action 1.7s infinite  alternate;
+    align-self: center;
+
+}
+.img5{
+    background-image: url("../images/woman-g40851f353_1920.jpg");
+    background-size:cover;
+    -webkit-animation: action 1.8s infinite  alternate;
+    animation: action 1.8s infinite  alternate;
+    align-self: flex-end;
+    }
+    .img6{
+        background-image: url("../images/harmony-g7ff54946c_1920.jpg");
+        background-size:cover;
+        -webkit-animation: action 1s infinite  alternate;
+        animation: action 1s infinite  alternate;
+        align-self: flex-start;
+    }
+    .img7{
+        background-image: url("../images/rock-g5050bcf3f_1920.jpg");
+        background-size:cover;
+        -webkit-animation: action 1.7s infinite  alternate;
+        animation: action 1.7s infinite  alternate;
+        align-self: center;
+    }
+    .img8{
+        background-image: url("../images/meditation-gc2ee6b235_1920.jpg");
+        background-size:cover;
+        -webkit-animation: action 0.5s infinite  alternate;
+        animation: action 0.5s infinite  alternate;
+        align-self: flex-end;
+    }
+@-webkit-keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+/* *************************************************************************************************/
+
+
+
+

@@ -27,7 +27,7 @@
     <h1>Update Activity</h1>
 
 
-    <form action="/update/activity" method="post">
+    <form action="/edit/activity/{{edit.id}}" method="post">
         <input type="hidden" name="user_id" value="{{session.user_id}}">
         <div>
             <div class="select_goal">
@@ -52,20 +52,13 @@
             <label for="feeling_before">Feeling Before: </label>
             <select name="feeling_before">
                 {% for index in range(10)%}
-                <option value="{{index}}">{{index}}</option>
+                    <option value="{{index}}">{{index}}</option>
                 {% endfor %}
             </select>
         </div>
         <img src="https://t4.ftcdn.net/jpg/02/97/10/99/360_F_297109941_q8OZiHb9iRomQ2dD5Q6ozdqvLdILkgNQ.jpg"
             class="img-fluid" alt="Responsive image">
-        <div>
-            <label for="feeling_after">Feeling After:</label>
-            <select name="feeling_after">
-                {% for index in range(10)%}
-                <option value="{{index}}">{{index}}</option>
-                {% endfor %}
-            </select>
-        </div>
+        
         <button type="submit" class="btn btn-primary">Update Activity</button>
 
         <div class="conatiner error">

@@ -17,7 +17,7 @@ class Activity:
         self.feeling_after = data['feeling_after']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
-        self.user_id = data['user_id']
+        # self.user_id = data['user_id']
         # self.creator = None  # this for create instance of user
 
 # #READ____MODEL____SQL
@@ -30,24 +30,23 @@ class Activity:
         print("%%%%%%%%%%%%%%%",result)
         return result
 
-    @classmethod
-    def get_all(cls, data):
-        query = "SELECT * FROM activities WHERE user_id=%(user_id)s;"
-        results = connectToMySQL(cls.DB).query_db(query, data)
-        activities = []
-        for row in results:
-            # print("*******************", row)
-            activities.append(row)
-        return activities
+    # @classmethod
+    # def get_all(cls, data):
+    #     query = "SELECT * FROM activities WHERE user_id=%(user_id)s;"
+    #     results = connectToMySQL(cls.DB).query_db(query, data)
+    #     activities = []
+    #     for row in results:
+    #         # print("*******************", row)
+    #         activities.append(row)
+    #     return activities
 
 
     @classmethod
-    def get_one_activity(cls, data):
+    def get_one_activity(cls, id):
+        data={'id':id}
         query = "SELECT * FROM activities WHERE id = %(id)s;"
         result = connectToMySQL(cls.DB).query_db(query, data)
-        if result:
-            result = (result[0]) 
-        return result
+        return cls(result[0]) 
 
     @classmethod
     def get_latest_activity(cls, data):
@@ -92,7 +91,9 @@ class Activity:
     @classmethod
     def update_activity(cls, data):
         query = """UPDATE activities SET goal_name=%(goal_name)s,activity_name=%(activity_name)s,comment=%(comment)s,feeling_before=%(feeling_before)s WHERE id = %(id)s;"""
-        return connectToMySQL(cls.DB).query_db(query, data)
+        result=connectToMySQL(cls.DB).query_db(query, data)
+        print("*******update info******",result)
+        return result
 
     # DELETE____MODEL____SQL
 
