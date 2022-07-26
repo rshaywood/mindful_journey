@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- google font link -->
-    <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto&family=Rubik+Moonrocks&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto&family=Rubik+Moonrocks&display=swap" -->
         rel="stylesheet">
     <!-- css link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
@@ -58,8 +61,7 @@
                                 <a href="/login">Sign In</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/signup"><button type="button" class="btn btn-warning signin-btn">Sign
-                                        Up</button></a>
+                                <a href="/signup"><button type="button" class="btn btn-warning signin-btn">Sign Up</button></a>
                             </li>
                         </ul>
                     </div>
@@ -70,7 +72,7 @@
         <div class="container mt-3" id="landing_pg_container">
             <div class="row">
                 <div class="col my-3">
-                    <h2 class="fs-1 mb-3">Mindful Journey</h2>
+                    <h2 class="fs-1 mb-3">MINDFUL JOURNEY</h2>
                     <h4 class="mb-3">Taking steps to be the best You!</h4>
                     <img class="brainimg" src="{{ url_for('static', filename='images/mindset-g96504f3be_1920.jpg')}}">
                 </div>
