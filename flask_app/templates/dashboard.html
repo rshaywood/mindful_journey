@@ -74,8 +74,8 @@
         <h3>Taking the steps to be the best You!</h3>
         <aside>
             <div class="left_side">
-                <h3>Your Goal:</h3>
-                {% for activity in activities %} 
+                <h3>Your Goal:</h3> 
+                {% for activity in latest_activity %}
                 <p>{{activity.goal_name}}</p>
             </div>
             <div class="right_side">
