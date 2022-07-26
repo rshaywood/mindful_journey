@@ -40,37 +40,14 @@ class Activity:
             activities.append(row)
         return activities
 
-    # @classmethod
-    # def get_a_users_with_activities(cls):
-    #     query = """
-    #     SELECT * FROM activities
-    #     LEFT JOIN users
-    #     ON users.id = activities.users_id
-    #     ;"""
-    #     result = connectToMySQL(cls.DB).query_db(query)
-    #     Activities = []
-    #     for db_row_activities in result:
-    #         user_activities = cls(db_row_activities)
-    #         activity_dictionary={
-    #             "id" : db_row_activities["users.id"],
-    #             "first_name":db_row_activities['first_name'],
-    #             "last_name": db_row_activities['last_name'],
-    #             'email': db_row_activities['email'], 
-    #             'password': db_row_activities['password'],
-    #             'user_image': db_row_activities["user_image"],
-    #             'created_at': db_row_activities["users.created_at"], 
-    #             'updated_at': db_row_activities["users.updated_at"],
-    #         }
-    #         user_activities.activity_name = user.User(activity_dictionary)
-    #         print("*******************",activity_dictionary)
-    #         Activities.append(user_activities)
-    #     return Activities
 
     @classmethod
     def get_one_activity(cls, data):
         query = "SELECT * FROM activities WHERE id = %(id)s;"
-        results = connectToMySQL(cls.DB).query_db(query, data)
-        return cls(results[0])
+        result = connectToMySQL(cls.DB).query_db(query, data)
+        if result:
+            result = (result[0]) 
+        return result
 
     @classmethod
     def get_one_goal(cls, data):
@@ -91,8 +68,12 @@ class Activity:
     # DELETE____MODEL____SQL
 
     @classmethod
-    def destroy(cls, data):
-        query = "DELETE FROM activities WHERE id = %(id)s;"
+    def destroy(cls, id):
+        data = {"id" : id}
+        query = """
+        DELETE FROM activities 
+        WHERE id = %(id)s
+        ;"""
         return connectToMySQL(cls.DB).query_db(query, data)
 
     # static method for VALIDATEING

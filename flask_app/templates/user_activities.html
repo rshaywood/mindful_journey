@@ -65,8 +65,8 @@
                 <h5 class="card-title">{{activity.activity_name}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">I was feeling {{activity.feeling_before}} and after I felt  {{activity.feeling_after}}</h6>
                 <p class="card-text">{{activity.comment}}</p>
-                <a href="#" class="card-link">Edit</a>
-                <a href="#" class="card-link">Delete</a>
+                <a href="/edit/activity/{{activity.id}}" class="card-link">Edit</a>
+                <a href="/destroy/activity/{{activity.id}}" class="card-link">Delete</a>
                 </div>
             </div>
             {% endfor%}
