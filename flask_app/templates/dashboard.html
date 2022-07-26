@@ -38,7 +38,7 @@
                         <!-- <a class="navbar-brand title" href="">MJ Logo</a> -->
 
                         <div class="left-side-nav">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <ul class="navbar-nav me-auto mb-1 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">Learn</a>
                                 </li>
@@ -48,14 +48,13 @@
                             </ul>
                         </div>
                     </div>
-                    <input type="search" name="search" id="search" placeholder="Search">
                     <div class="right-side-nav">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <ul class="navbar-nav me-auto mb-1 mb-lg-0">
                             <li class="nav-item">
-                                <a href="/logout"><button type="button" class="btn btn-warning signin-btn">Sign Out</button></a>
+                                <input type="search" name="search" id="search" placeholder="Search">
                             </li>
                             <li class="nav-item">
-                                <a href="/"><button type="button" class="btn btn-warning signin-btn">Home</button></a>
+                                <a class="nav-link active" aria-current="page" href="/logout">Sign Out</a>
                             </li>
                             <li class="nav-item">
                                 {{session.first_name}} {{session.last_name}}
@@ -70,30 +69,21 @@
             </div>
         </nav>
 <div class="container-dashboard">
-    <div class="content left_side">
-        <h2>Welcome to Your Mindful Journey, {{session.first_name}}!</h2>
-        <h3>Taking the steps to be the best You!</h3>
-                <h3>Your Goal:</h3> 
+    <div class="left_side" >
+        <h2 class="m-3">Welcome to your Mindful Journey, {{session.first_name}}!</h2>
+        <h3 class="m-3">Taking the steps to be the best You!</h3>
+        <div class="m-5">
+            <h4>Your Goal:</h4> 
                 {% for activity in latest_activity %}
                 <p>{{activity.goal_name}}</p>
-                <h3>Your latest activity to achieve your goal:</h3>
-                <table id="activities">
-                    <tr>
-                        <th>Name</th>
-                    </tr>
-                    <tr>
-                        <td>{{activity.activity_name}}</td>
-                    {% endfor %}
-                    </tr> 
-                </table>
-                <!-- <button type="button" class="btn btn-secondary">Physical Fitness</button>
-                <button type="button" class="btn btn-secondary">Self-Appreciation</button>
-                <button type="button" class="btn btn-secondary">Meditation</button>
-                <button type="button" class="btn btn-secondary">Anxiety</button>
-                <button type="button" class="btn btn-secondary">Sleep</button>
-                <button type="button" class="btn btn-secondary">Healthy Eating</button> -->
-    <a href="/new/activity"><button>Add Activity</button></a>
-    <a href="/journal/{{this_user.id}}"><button>View Full Journal Entries</button></a>
+        </div>
+        <div class="m-5">
+            <h4>Your latest activity:</h4>
+            <p>{{activity.activity_name}}</p>
+            {% endfor %}
+        </div>
+        <a href="/new/activity" class="m-5"><button class="btn btn-warning signin-btn text-light">Add Activity</button></a>
+        <a href="/journal/{{this_user.id}}"><button class="btn btn-warning signin-btn text-light">View Full Journal Entries</button></a>
     </div>
     <div class="content right_side">
         <div class="circle-img img1">Anxiety</div>
