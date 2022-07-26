@@ -17,9 +17,54 @@
 
 </head>
 <body>
+
+<!--  navigation bar -->
+
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="title">
+                    <!-- logo here__> -->
+                    <img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="50px" height="50px">
+
+                    <a class="navbar-brand title" href="#">MJ Logo</a>
+                    <div class="left-side-nav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Learn</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Events</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="search" name="search" id="search" placeholder="Search">
+                <div class="right-side-nav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item signin-link">
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="nav-item signin-link">
+                            <a href="/login">Sign In</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/signup"><button type="button" class="btn btn-warning signin-btn">Sign
+                                    Up</button></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
     <div class="register_container">
         <form action="/create/user" method="post" class="signup-form" enctype="multipart/form-data">
-            <h3>Sign Up </h3>
+            <h3>Sign Up</h3>
             <div>
                 <label for="first_name">First Name:</label>
                 <input type="text" name="first_name" class="input" >
