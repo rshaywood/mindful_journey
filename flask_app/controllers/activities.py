@@ -85,12 +85,13 @@ def edit_activity(id):
         "goal_name": request.form["goal_name"],
         "activity_name": request.form["activity_name"],
         "comment": request.form["comment"],
-        "feeling_before": request.form["feeling_before"]
+        "feeling_before": request.form["feeling_before"],
+        "feeling_after": request.form["feeling_after"]
     }
     if(activity.Activity.update_activity(activity_data)==None):
-        return redirect('/users/dashboard')
-    else:
         return redirect(f"/journal/{id}")
+    else:
+        return redirect('/users/dashboard')
 
 
 
