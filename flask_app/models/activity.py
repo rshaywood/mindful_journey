@@ -24,8 +24,8 @@ class Activity:
 
     @classmethod
     def save(cls, data):
-        query = """INSERT INTO activities (goal_name,activity_name,comment,feeling_before,user_id) 
-        VALUES (%(goal_name)s,%(activity_name)s,%(comment)s,%(feeling_before)s,%(user_id)s);"""
+        query = """INSERT INTO activities (goal_name,activity_name,comment,feeling_before,feeling_after,user_id) 
+        VALUES (%(goal_name)s,%(activity_name)s,%(comment)s,%(feeling_before)s,%(feeling_after)s,%(user_id)s);"""
         result=connectToMySQL(cls.DB).query_db(query, data)
         print("%%%%%%%%%%%%%%%",result)
         return result
@@ -90,7 +90,7 @@ class Activity:
 
     @classmethod
     def update_activity(cls, data):
-        query = """UPDATE activities SET goal_name=%(goal_name)s,activity_name=%(activity_name)s,comment=%(comment)s,feeling_before=%(feeling_before)s WHERE id = %(id)s;"""
+        query = """UPDATE activities SET goal_name=%(goal_name)s,activity_name=%(activity_name)s,comment=%(comment)s,feeling_before=%(feeling_before)s ,feeling_after=%(feeling_after)sWHERE id = %(id)s;"""
         result=connectToMySQL(cls.DB).query_db(query, data)
         print("*******update info******",result)
         return result
