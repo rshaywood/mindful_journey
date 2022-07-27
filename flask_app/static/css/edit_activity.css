@@ -92,3 +92,36 @@ i.fas {
     gap: 15px;
 }
 /************************* end nav bar *************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer */
+.bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+ul.navbar-nav{
+    display: flex;
+    flex-direction: row;
+    
+}
+footer{
+    font-size: 14px;
+    color: #343a40;
+}
+.social-icon{
+    width:30%;
+    margin: 0 auto;
+}
