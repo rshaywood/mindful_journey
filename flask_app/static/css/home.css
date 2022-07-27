@@ -111,8 +111,8 @@ h1 {
 }
 
 .mainimg{
-    width: 320px;
-    height: 300px;
+    width:70%;
+    height:95%;
 }
 
 .brainimg {
@@ -121,7 +121,11 @@ h1 {
 }
 
 #landing_pg_container {
-    max-width: 70%;
+    max-width: 50%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
@@ -156,4 +160,8 @@ footer{
 .social-icon{
     width:30%;
     margin: 0 auto;
+}
+
+.disclaimer{
+    font-size: 0.6em;
 }
