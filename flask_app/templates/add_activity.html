@@ -38,12 +38,13 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="title">
                         <!-- logo here__> -->
-                        <img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="50px" height="50px">
+                        <img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="100px"
+                            height="100px">
 
                         <a class="navbar-brand title" href="#">MJ</a>
                         <div class="left-side-nav">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                                <li class="nav-item ">
                                     <a class="nav-link active" aria-current="page" href="#">Learn</a>
                                 </li>
                                 <li class="nav-item">
@@ -52,7 +53,7 @@
                             </ul>
                         </div>
                     </div>
-                    <input type="search" name="search" id="search" placeholder="Search">
+
                     <div class="right-side-nav">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item signin-link">
@@ -71,12 +72,17 @@
         </nav>
 
 
-        <div class="container m-4 p-2 ">
-            <h1 class="d-flex justify-content-center">Add Activity</h1>
-            <form action="/create/activity" method="post" style="text-align: center;">
+
+        <div class="container d-flex justify-content-evenly p-2 mt-5">
+            <img src="{{ url_for('static', filename='images/fear.webp') }}" width="600" height="600" id="myPicture"
+                class="shadow-lg p-3 mb-5 bg-body rounded" alt="some image">
+
+
+            <form action="/create/activity" method="post" class=" mx-auto text-center col-xs-1">
+                <h1 class="shadow p-3 mb-5 bg-body rounded">Add Activity</h1>
                 <input type="hidden" name="user_id" value="{{session.user_id}}">
                 <div>
-                    <div class="select_goal m-2">
+                    <div class="select_goal m-2 shadow-sm p-3 mb-5 bg-body rounded">
                         <label for="select_goal">Choose Your Goal:</label>
                         <select name="goal_name">
                             <option value="">--Select--</option>
@@ -87,32 +93,40 @@
                             <option value="Manage Stress and Anxiety">Manage Stress and Anxiety</option>
                         </select>
                     </div>
-                    <label for="activity_name">Activity Name:</label>
-                    <input type="text" name="activity_name">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded">
+                        <label for="activity_name">Activity Name:</label>
+                        <input type="text" name="activity_name">
+                    </div>
                 </div>
-                <div>
+                <div class="shadow-sm p-3 mb-5 bg-body rounded">
                     <label for="comment">Journal Your Activity: </label><br>
                     <textarea name="comment" cols="30" rows="10"></textarea>
                 </div>
-                <div>
-                    <label for="feeling_before">Feeling Before: </label>
-                    <select name="feeling_before">
-                        {% for index in range(11)%}
-                        <option value="{{index}}">{{index}}</option>
-                        {% endfor %}
-                    </select>
+
+                <div class="shadow-sm p-3 mb-5 bg-body rounded">
+                    <div>
+                        <label for="feeling_before">Feeling Before: </label>
+                        <select name="feeling_before">
+                            {% for index in range(11)%}
+                            <option value="{{index}}">{{index}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <img
+                        src="https://t4.ftcdn.net/jpg/02/97/10/99/360_F_297109941_q8OZiHb9iRomQ2dD5Q6ozdqvLdILkgNQ.jpg">
+                    <div>
+                        <label for="feeling_after">Feeling After:</label>
+                        <select name="feeling_after">
+                            {% for index in range(11)%}
+                            <option value="{{index}}">{{index}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
-                <img src="https://t4.ftcdn.net/jpg/02/97/10/99/360_F_297109941_q8OZiHb9iRomQ2dD5Q6ozdqvLdILkgNQ.jpg"
-                    class="img-fluid" alt="Responsive image">
-                <div>
-                    <label for="feeling_after">Feeling After:</label>
-                    <select name="feeling_after">
-                        {% for index in range(11)%}
-                        <option value="{{index}}">{{index}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary signin-btn text-light">Add Activity</button>
+                <button type="submit" class="shadow  bg-body rounded btn btn-info signin-btn text-dark"
+                    style="margin-top: 5px;">Add
+                    Activity</button>
+
 
                 <div class="conatiner error">
                     <ul>
@@ -129,11 +143,9 @@
                     </ul>
             </form>
         </div>
-        <img src="{{ url_for('static', filename='images/fearless.webp') }}" style="width: 50%;">
 
 
-        <img src="{{ url_for('static', filename='images/fearless.webp') }}" width="305" height="312" id="myPicture"
-            alt="some image">
+
 
 
 
