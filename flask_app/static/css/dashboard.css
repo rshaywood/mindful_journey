@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Marcellus SC', serif;
 }
+
 .user_image{
     width:200px;
     height:200px; 
@@ -11,8 +12,8 @@
 }
 
 img{
-    width:100px;
-    height:100px;
+    width:90px;
+    height:90px;
 }
 
 /* navigation bar */
@@ -21,6 +22,7 @@ img{
     margin: 0 auto;
     
 }
+
 .collapse{
     background-color: #C3DFE9;
     /* padding: 5px 20px 5px 20px; */
@@ -30,27 +32,30 @@ img{
     gap:10px;
     align-items: center;
 }
+
 .left-side-nav ul,.right-side-nav ul,.title{
     /* background-color: #20c997; */
     display: flex;
     align-items: center;
     /* gap:20px; */
 }
+
 /* left side of nav bar */
 .left-side-nav ul{
     width:200px;
 }
+
 /* right side of nav bar */
 .right-side-nav ul{
     width:600px;
 }
 
-
 * ul li,li a, .nav-item a, .title a{
     color: #343a40;
     
 }
- .nav-item a, .title a:hover{
+
+.nav-item a, .title a:hover{
     color: #343a40;
 }
 
@@ -62,6 +67,7 @@ img{
     justify-content: flex-end;
     gap:15px;
 }
+
 a .signin-btn{
     background-color: #339af0;
     color: #343a40;
@@ -69,6 +75,7 @@ a .signin-btn{
     border-color:#343a40;
 
 }
+
 a .signin-btn:hover{
     background-color: #2574be;
     color: #343a40;
@@ -81,9 +88,6 @@ a .signin-btn:hover{
     border-radius: 50%;
 }
 
-
-
-
 .container-dashboard{
     /* background-color: #ced4da; */
     width:90%;
@@ -93,10 +97,6 @@ a .signin-btn:hover{
     justify-content: space-between;
     /* align-items: center; */
 }
-
-/* .left_side {
-    border: 1px solid black;
-} */
 
 .right_side{
     width:60%;
@@ -114,7 +114,9 @@ a .signin-btn:hover{
     justify-content: center;
     box-shadow: 3px 3px 3px gray;
 }
+
 /******************** ANIMATION FOR CIRCLE IMAGES ON DASHBOARD************************** */
+
 .img1{
     width:70px;
     height:70px;
@@ -216,8 +218,8 @@ a .signin-btn:hover{
     0% { transform: translateY(0); }
     100% { transform: translateY(-10px); }
 }
-/* *************************************************************************************************/
 
+/* *************************************************************************************************/
 
 /* FOOTER */
 .bottom{
@@ -226,6 +228,7 @@ a .signin-btn:hover{
     align-items: center;
     justify-content: center;
 }
+
 ul.navbar-nav{
     display: flex;
     flex-direction: row;
@@ -236,6 +239,6 @@ footer{
     color: #343a40;
 }
 .social-icon{
-    width:30%;
+    width:25%;
     margin: 0 auto;
 }
