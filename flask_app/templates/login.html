@@ -33,9 +33,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
             <div class="title">
                 <!-- logo here__> -->
-                <a href="/"><img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="50px" height="50px"></a>
-
-                <a class="navbar-brand title" href="/">MJ Logo</a>
+                <img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="50px" height="50px">
                 <div class="left-side-nav">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -60,7 +58,7 @@
 </nav>
     <div class="login">
         <form action="/users/login" method="post" class="login-form">
-            <h2>Sign In</h2>
+            <h3>Sign In</h3>
             <div class="email-section">
             <label for="email">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" class="user-icon">

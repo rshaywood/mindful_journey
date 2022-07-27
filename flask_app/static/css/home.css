@@ -18,16 +18,19 @@ img{
 }
 .collapse{
     background-color: #C3DFE9;
-    padding: 5px 20px 5px 20px;
+    height:90px;
+    /* padding: 5px 20px 5px 20px; */
     display: flex;
     justify-content: space-between;
     gap:20px;
     align-items: center;
 }
+
 .left-side-nav ul,.right-side-nav ul,.title{
     /* background-color: #20c997; */
     display: flex;
-    gap:50px;
+    align-items: center;
+    gap:30px;
 }
 /* left side of nav bar */
 .left-side-nav ul{

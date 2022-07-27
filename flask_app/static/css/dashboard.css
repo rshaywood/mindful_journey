@@ -22,17 +22,19 @@ img{
     
 }
 .collapse{
-    background-color: #ced4da;
-    padding: 5px 20px 5px 20px;
+    background-color: #C3DFE9;
+    /* padding: 5px 20px 5px 20px; */
+    height:90px;
     display: flex;
     justify-content: space-between;
-    gap:20px;
+    gap:10px;
     align-items: center;
 }
 .left-side-nav ul,.right-side-nav ul,.title{
     /* background-color: #20c997; */
     display: flex;
-    gap:50px;
+    align-items: center;
+    /* gap:20px; */
 }
 /* left side of nav bar */
 .left-side-nav ul{
@@ -40,7 +42,7 @@ img{
 }
 /* right side of nav bar */
 .right-side-nav ul{
-    width:500px;
+    width:600px;
 }
 
 * ul li,li a, .nav-item a, .title a{
@@ -95,7 +97,7 @@ a .signin-btn:hover{
 } */
 
 .right_side{
-    width:48%;
+    width:60%;
     display: flex;
     flex-wrap: wrap;
     gap:40px;
@@ -114,6 +116,8 @@ a .signin-btn:hover{
 }
 /******************** ANIMATION FOR CIRCLE IMAGES ON DASHBOARD************************** */
 .img1{
+    width:70px;
+    height:70px;
     background-image: url("../images/anatomy-g200a3f688_1280.png");
     background-size:cover;
     -webkit-animation: action 1s infinite  alternate;
@@ -121,6 +125,9 @@ a .signin-btn:hover{
     align-self: center;
 }
 .img2{
+    width:150px;
+    height:150px;
+    color: #fff;
     background-image: url("../images/aware-g573baaea6_1920.jpg");
     background-size:cover;
     -webkit-animation: action 2s infinite  alternate;
@@ -128,6 +135,9 @@ a .signin-btn:hover{
     align-self: center;
 }
 .img3{
+    width:130px;
+    height:130px;
+    color: rgb(41, 106, 110);
     background-image: url("../images/brain-g2c8f19157_1920.jpg");
     background-size:cover;
     -webkit-animation: action 1.5s infinite  alternate;
@@ -135,6 +145,9 @@ a .signin-btn:hover{
     align-self: flex-end;
 }
 .img4{
+    width:150px;
+    height:150px;
+    color: #2574be;
     background-image: url("../images/question-g2898929a0_1920.jpg");
     background-size:cover;
     -webkit-animation: action 1.7s infinite  alternate;
@@ -143,6 +156,8 @@ a .signin-btn:hover{
 
 }
 .img5{
+    width:80px;
+    height:80px;
     background-image: url("../images/woman-g40851f353_1920.jpg");
     background-size:cover;
     -webkit-animation: action 1.8s infinite  alternate;
@@ -150,6 +165,10 @@ a .signin-btn:hover{
     align-self: flex-end;
     }
     .img6{
+        width:170px;
+        height:170px;
+        color: #fff;
+        font-size: 16px;
         background-image: url("../images/harmony-g7ff54946c_1920.jpg");
         background-size:cover;
         -webkit-animation: action 1s infinite  alternate;
@@ -166,9 +185,27 @@ a .signin-btn:hover{
     .img8{
         background-image: url("../images/meditation-gc2ee6b235_1920.jpg");
         background-size:cover;
-        -webkit-animation: action 0.5s infinite  alternate;
-        animation: action 0.5s infinite  alternate;
+        -webkit-animation: action 0.9s infinite  alternate;
+        animation: action 0.9s infinite  alternate;
         align-self: flex-end;
+    }
+    .img9{
+        width:115px;
+        height:115px;
+        background-image: url("../images/relaxation-gf06e7249f_1920.jpg");
+        background-size:cover;
+        -webkit-animation: action 0.9s infinite  alternate;
+        animation: action 0.9s infinite  alternate;
+        align-self: flex-end;
+    }
+    .img10{
+        width:130px;
+        height:130px;
+        background-image: url("../images/question-g6204f06be_1920.png");
+        background-size:cover;
+        -webkit-animation: action 1.4s infinite  alternate;
+        animation: action 1.4s infinite  alternate;
+        align-self: center;
     }
 @-webkit-keyframes action {
     0% { transform: translateY(0); }
