@@ -69,20 +69,15 @@
             </div>
         </nav>
 
-
-
-
-
         <div class="container d-flex justify-content-evenly p-2 mt-5">
             <img src="{{ url_for('static', filename='images/fear.webp') }}" width="600" height="600" id="myPicture"
                 class="shadow-lg p-3 mb-5 bg-body rounded" alt="some image">
 
-
             <form action="/edit/activity/{{edit.id}}" method="post" class=" mx-auto text-center col-xs-1">
-                <h1 class="shadow p-3 mb-5 bg-body rounded">Update Activity</h1>
+                <h1 class="shadow p-3 mb-1 bg-body rounded">Update Activity</h1>
                 <input type="hidden" name="user_id" value="{{session.user_id}}">
                 <div>
-                    <div class="select_goal m-2 shadow-sm p-3 mb-5 bg-body rounded">
+                    <div class="select_goal shadow-sm p-3 mb-1 bg-body rounded">
                         <label for="select_goal">Choose Your Goal:</label>
                         <select name="goal_name">
                             <option value="{{edit.goal_name}}">{{edit.goal_name}}</option>
@@ -93,26 +88,66 @@
                             <option value="Manage Stress and Anxiety">Manage Stress and Anxiety</option>
                         </select>
                     </div>
-                    <div class="shadow-sm p-3 mb-5 bg-body rounded">
+                    <div class="shadow-sm p-3 mb-1 bg-body rounded">
                         <label for="activity_name">Activity Name:</label>
                         <input type="text" name="activity_name" value="{{edit.activity_name}}">
                     </div>
                 </div>
-                <div class="shadow-sm p-3 mb-5 bg-body rounded">
+                <div class="shadow-sm p-3 mb-1 bg-body rounded">
                     <label for="comment">Journal Your Activity: </label><br>
-                    <textarea name="comment" cols="30" rows="10"> {{edit.comment}}</textarea>
+                    <textarea name="comment" cols="30" rows="5"> {{edit.comment}}</textarea>
                 </div>
 
-                <div class="shadow-sm p-3 mb-5 bg-body rounded">
-                    <div>
+                <div class="shadow-sm p-3 mb-1 bg-body rounded">
+                    <div class="p-1">
                         <label for="feeling_before">Feeling Before: </label>
-                        <select name="feeling_before">
+                        <!-- dropdown image before code below -->
+                    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+                    <script src="http://www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
+                    <Select id="feeling_before" name="feeling_before" class="dd">
+                        <option value="1" data-image="/static/images/happy.png">Happy</option>
+                        <option value="2" data-image="/static/images/relaxed.png">Relaxed</option>
+                        <option value="3" data-image="/static/images/sad.png">Sad</option>
+                        <option value="4" data-image="/static/images/scared.png">Scared</option>
+                        <option value="5" data-image="/static/images/Worried.png">Worried</option>
+                        <option value="6" data-image="/static/images/angry.png">Angry</option>
+                        <option value="7" data-image="/static/images/embarrassed.png">Embarrassed</option>
+                        <option value="8" data-image="/static/images/tired.png">Tired</option>
+                        </select>
+                    </div>
+                    <div class="p-1">
+                        <label for="feeling_after">Feeling After:</label>
+                        <!-- dropdown image code after below -->
+                        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+                        <script src="http://www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/js/msdropdown/jquery.dd.min.js" type="text/javascript"></script>
+                        <Select id="feeling_after" name="feeling_after" class="dd">
+                            <option value="1" data-image="/static/images/happy.png">Happy</option>
+                              <option value="2" data-image="/static/images/relaxed.png">Relaxed</option>
+                              <option value="3" data-image="/static/images/sad.png">Sad</option>
+                              <option value="4" data-image="/static/images/scared.png">Scared</option>
+                              <option value="5" data-image="/static/images/Worried.png">Worried</option>
+                              <option value="6" data-image="/static/images/angry.png">Angry</option>
+                              <option value="7" data-image="/static/images/embarrassed.png">Embarrassed</option>
+                              <option value="8" data-image="/static/images/tired.png">Tired</option>
+                            </select>
+                    </div>
+                      
+                      <script language="javascript">
+                      $(document).ready(function(e) {
+                      try {
+                      $("body select").msDropDown();
+                      } catch(e) {
+                      alert(e.message);
+                      }
+                      });
+                      </script>
+                        <!-- <select name="feeling_before">
                             {% for index in range(11)%}
                             <option value="{{index}}">{{index}}</option>
                             {% endfor %}
-                        </select>
+                        </select> -->
                     </div>
-                    <img
+                    <!-- <img
                         src="https://t4.ftcdn.net/jpg/02/97/10/99/360_F_297109941_q8OZiHb9iRomQ2dD5Q6ozdqvLdILkgNQ.jpg">
                     <div>
                         <label for="feeling_after">Feeling After:</label>
@@ -120,13 +155,13 @@
                             {% for index in range(11)%}
                             <option value="{{index}}">{{index}}</option>
                             {% endfor %}
-                        </select>
-                    </div>
-                </div>
+                        </select> -->
+                    
+                
                 <button type="submit" class="shadow  bg-body rounded btn btn-info signin-btn text-dark"
                     style="margin-top: 5px;">Update
                     Activity</button>
-
+            </div>
 
                 <div class="conatiner error">
                     <ul>
