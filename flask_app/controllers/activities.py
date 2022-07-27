@@ -90,7 +90,7 @@ def edit_activity(id):
     if(activity.Activity.update_activity(activity_data)==None):
         return redirect('/users/dashboard')
     else:
-        return redirect("/")
+        return redirect(f"/journal/{id}")
 
 
 
