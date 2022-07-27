@@ -102,4 +102,4 @@ def destroy_activity(id):
     if 'user_id' not in session:
         return redirect('/')
     activity.Activity.destroy(id)
-    return redirect("/users/dashboard")
+    return redirect(f"/journal/{id}")
