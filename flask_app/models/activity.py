@@ -18,7 +18,7 @@ class Activity:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
         # self.user_id = data['user_id']
-        # self.creator = None  # this for create instance of user
+        self.creator = None  # this for create instance of user
 
 # #READ____MODEL____SQL
 
@@ -54,7 +54,7 @@ class Activity:
         SELECT * FROM activities
         JOIN users
         ON activities.user_id = users.id
-        ORDER BY activities.id DESC LIMIT 1
+        ORDER BY users.id DESC LIMIT 1
         ;"""
         result = connectToMySQL(cls.DB).query_db(query, data)
         # print("^^^^^^^^^^^^^^^^^^^^^", result)
