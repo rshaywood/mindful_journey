@@ -1,3 +1,139 @@
 * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: 'Marcellus SC', serif;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+/* navigation bar */
+.navbar {
+    width: 100%;
+    margin: 0 auto;
+
+}
+
+.collapse {
+    background-color: #91e2b6;
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.left-side-nav ul,
+.right-side-nav ul,
+.title {
+    /* background-color: #20c997; */
+    display: flex;
+    gap: 50px;
+}
+
+/* left side of nav bar */
+.left-side-nav ul {
+    width: 200px;
+
+}
+
+/* right side of nav bar */
+.right-side-nav ul {
+    width: 600px;
+}
+
+.user_image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+* ul li,
+li a,
+.nav-item a,
+.title a {
+    color: #343a40;
+}
+
+.nav-item a,
+.title a:hover {
+    color: #343a40;
+}
+
+.sign-in {
+    text-decoration: none;
+
+}
+
+i.fas {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.navbar-nav {
+    padding-right: 20px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.hero-section {
+    height: 100vh;
+    /* background-image: url("../images/brett-jordan-qF_KGJbgsOo-unsplash.jpg");
+    background-size:contain;
+    background-repeat: no-repeat; */
+}
+
+/* style grid container */
+/* .grid-container{
+width:60% ;
+height:400px;
+/* padding: 10px; */
+/* margin: 0 auto; */
+/* background-color: beige; */
+/* display: grid; */
+/* grid-template-columns: 400px 400px;
+align-items:center; */
+/* justify-content: center; */
+/* gap:200px; */
+/* column-gap: 15px; */
+/* } */
+a .signin-btn {
+    background-color: #323C83;
+    color: #fff;
+    padding: 5px 20px;
+    border-color: #343a40;
+}
+
+a .signin-btn:hover {
+    background-color: #3c4799;
+    color: #fff;
+    border-color: #343a40;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card-body {
+    border-left: 15px groove #C3DFE9;
+}
+
+.mainimg {
+    width: 320px;
+    height: 300px;
+}
+
+.brainimg {
+    width: 300px;
+    height: 300px;
+}
+
+#landing_pg_container {
+    max-width: 70%;
 }

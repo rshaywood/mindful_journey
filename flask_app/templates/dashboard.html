@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
     <!-- <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&family=Roboto&family=Rubik+Moonrocks&display=swap" -->
-        rel="stylesheet">
+    rel="stylesheet">
     <!-- css link -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
     <!-- bootstrap5 link -->
@@ -71,34 +71,36 @@
                 </div>
             </div>
         </nav>
-<div class="container-dashboard">
-    <div class="left_side" >
-        <h2 class="m-3">Welcome to your Mindful Journey, {{session.first_name}}!</h2>
-        <h3 class="m-3">Taking the steps to be the best You!</h3>
-        <div class="m-5">
-            <h4>Your Goal:</h4> 
-                {% for activity in latest_activity %}
-                <p>{{activity.goal_name}}</p>
-        </div>
-        <div class="m-5">
-            <h4>Your latest activity:</h4>
-            <p>{{activity.activity_name}}</p>
-            {% endfor %}
-        </div>
-        <a href="/new/activity" class="m-5"><button class="btn btn-warning signin-btn text-light">Add Activity</button></a>
-        <a href="/journal/{{this_user.id}}"><button class="btn btn-warning signin-btn text-light">View Full Journal Entries</button></a>
-    </div>
-    <div class="content right_side">
-        <div class="circle-img img1">Anxiety</div>
-        <div class="circle-img img2">Meditation</div>
-        <div class="circle-img img3">Sleep</div>
-        <div class="circle-img img4">Anxiety</div>
-        <div class="circle-img img5"></div>
-        <div class="circle-img img6"></div>
-        <div class="circle-img img7"></div>
-        <div class="circle-img img8"></div>
-    </div>
-</main>
+        <div class="container-dashboard">
+            <div class="left_side">
+                <h2 class="m-3">Welcome to your Mindful Journey, {{session.first_name}}!</h2>
+                <h3 class="m-3">Taking the steps to be the best You!</h3>
+                <div class="m-5">
+                    <h4>Your Goal:</h4>
+                    {% for activity in latest_activity %}
+                    <p>{{activity.goal_name}}</p>
+                </div>
+                <div class="m-5">
+                    <h4>Your latest activity:</h4>
+                    <p>{{activity.activity_name}}</p>
+                    {% endfor %}
+                </div>
+                <a href="/new/activity" class="m-5"><button class="btn btn-warning signin-btn text-light">Add
+                        Activity</button></a>
+                <a href="/journal/{{this_user.id}}"><button class="btn btn-warning signin-btn text-light">View Full
+                        Journal Entries</button></a>
+            </div>
+            <div class="content right_side">
+                <div class="circle-img img1">Anxiety</div>
+                <div class="circle-img img2">Meditation</div>
+                <div class="circle-img img3">Sleep</div>
+                <div class="circle-img img4">Anxiety</div>
+                <div class="circle-img img5"></div>
+                <div class="circle-img img6"></div>
+                <div class="circle-img img7"></div>
+                <div class="circle-img img8"></div>
+            </div>
+    </main>
     <!-- java script link -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js')}}"></script>
 </body>
