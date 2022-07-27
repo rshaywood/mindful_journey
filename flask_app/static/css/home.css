@@ -2,7 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Marcellus SC', serif;
 }
+
+img{
+    width:100px;
+    height:100px;
+}
+
 /* navigation bar */
 .navbar{
     width: 100%;
@@ -29,7 +36,7 @@
 }
 /* right side of nav bar */
 .right-side-nav ul{
-    width:500px;
+    width:600px;
 }
 .user_image{
     width:60px;
@@ -67,19 +74,19 @@ i.fas{
 }
 
 /* style grid container */
-.grid-container{
+/* .grid-container{
 width:60% ;
 height:400px;
-padding: 20px;
-margin: 0 auto;
+/* padding: 10px; */
+/* margin: 0 auto; */
 /* background-color: beige; */
-display: grid;
-grid-template-columns: 400px 400px;
-align-items:center;
-justify-content: center;
+/* display: grid; */
+/* grid-template-columns: 400px 400px;
+align-items:center; */
+/* justify-content: center; */
 /* gap:200px; */
-column-gap: 150px;
-}
+/* column-gap: 15px; */
+/* } */ 
  a .signin-btn{
     background-color:#323C83;
     color: #fff;
@@ -92,5 +99,24 @@ a .signin-btn:hover{
     border-color:#343a40;
 }
 
+h1 {
+    text-align: center;
+}
 
+.card-body {
+    border-left: 15px groove #C3DFE9;
+}
 
+.mainimg{
+    width: 320px;
+    height: 300px;
+}
+
+.brainimg {
+    width: 300px;
+    height: 300px;
+}
+
+#landing_pg_container {
+    max-width: 70%;
+}
