@@ -123,3 +123,14 @@ h1 {
 #landing_pg_container {
     max-width: 70%;
 }
+
+
+/******************* JOURNAL PAGE STYLE ********/
+li a{
+    text-decoration: none;
+}
+
+/* card part */
+.my-3.card-box{
+    margin: 0 auto;
+}

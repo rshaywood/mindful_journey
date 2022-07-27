@@ -45,8 +45,10 @@ img{
     width:600px;
 }
 
+
 * ul li,li a, .nav-item a, .title a{
     color: #343a40;
+    
 }
  .nav-item a, .title a:hover{
     color: #343a40;

@@ -4,10 +4,13 @@
     box-sizing: border-box;
     font-family: 'Marcellus SC', serif;
 }
+li a{
+    text-decoration: none;
+}
 
 
 
-/* navigation bar */
+/* **********************navigation bar***************************** */
 .navbar {
     width: 100%;
     margin: 0 auto;
@@ -15,8 +18,8 @@
 }
 
 .collapse {
-    background-color: #91e2b6;
-    padding: 5px 20px 5px 20px;
+    background-color: #C3DFE9;
+    height:90px;
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -28,6 +31,7 @@
 .title {
     /* background-color: #20c997; */
     display: flex;
+    align-items: center;
     gap: 50px;
 }
 
@@ -47,7 +51,18 @@
     height: 60px;
     border-radius: 50%;
 }
+a .signin-btn{
+    background-color: #339af0;
+    color: #343a40;
+    padding: 5px 20px;
+    border-color:#343a40;
 
+}
+a .signin-btn:hover{
+    background-color: #2574be;
+    color: #343a40;
+    border-color:#343a40;
+}
 * ul li,
 li a,
 .nav-item a,
@@ -78,6 +93,7 @@ i.fas {
     justify-content: flex-end;
     gap: 15px;
 }
+/************************* end nav bar *************************/
 
 .hero-section {
     height: 100vh;
@@ -134,3 +150,15 @@ h1 {
 #landing_pg_container {
     max-width: 70%;
 }
+/* add form */
+.mx-auto{
+    /* background-color: #339af0; */
+    height:400px;
+}
+/* container */
+.container.d-flex{
+    /* background-color: #343a40; */
+    display: flex;
+    gap:20px;
+}
+/********************/

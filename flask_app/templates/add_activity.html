@@ -41,7 +41,6 @@
                         <img src="{{ url_for('static', filename='images/MJCompass.png') }}" width="100px"
                             height="100px">
 
-                        <a class="navbar-brand title" href="#">MJ</a>
                         <div class="left-side-nav">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                                 <li class="nav-item ">
@@ -63,7 +62,7 @@
                                 <a class="nav-link active" aria-current="page" href="/users/dashboard">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/logout">Sign Out</a>
+                                <a class="nav-link active" aria-current="page" href="/logout"><button type="button" class="btn btn-warning signin-btn">Sign out</button></a>
                             </li>
                         </ul>
                     </div>
@@ -74,7 +73,7 @@
 
 
         <div class="container d-flex justify-content-evenly p-2 mt-5">
-            <img src="{{ url_for('static', filename='images/fear.webp') }}" width="600" height="600" id="myPicture"
+            <img src="{{ url_for('static', filename='images/fear.webp') }}" width="600" height="616" id="myPicture"
                 class="shadow-lg p-3 mb-5 bg-body rounded" alt="some image">
 
 
@@ -93,17 +92,17 @@
                             <option value="Manage Stress and Anxiety">Manage Stress and Anxiety</option>
                         </select>
                     </div>
-                    <div class="shadow-sm p-3 mb-5 bg-body rounded">
+                    <div class="shadow-sm p-3 mb-5 bg-body rounded ">
                         <label for="activity_name">Activity Name:</label>
                         <input type="text" name="activity_name">
                     </div>
                 </div>
                 <div class="shadow-sm p-3 mb-5 bg-body rounded">
                     <label for="comment">Journal Your Activity: </label><br>
-                    <textarea name="comment" cols="30" rows="10"></textarea>
+                    <textarea name="comment" cols="60" rows="9"></textarea>
                 </div>
 
-                <div class="shadow-sm p-3 mb-5 bg-body rounded">
+                <div class="shadow-sm p-3 mb-5 bg-body rounded emoji-part">
                     <div>
                         <label for="feeling_before">Feeling Before: </label>
                         <select name="feeling_before">
