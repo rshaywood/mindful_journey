@@ -54,7 +54,7 @@ class Activity:
         SELECT * FROM activities
         JOIN users
         ON activities.user_id = users.id
-        ORDER BY users.id DESC LIMIT 1
+        ORDER BY activities.id DESC LIMIT 1
         ;"""
         result = connectToMySQL(cls.DB).query_db(query, data)
         # print("^^^^^^^^^^^^^^^^^^^^^", result)
