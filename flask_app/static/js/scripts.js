@@ -1,12 +1,12 @@
 
-function getQuote() {
-    fetch("http://api.quotable.io/random")
-        .then(res => res.json())
-        .then(data => {
-            document.querySelector(".description side").innerHTML = `"${data.content}"`;
-        })
+var getQuote=async()=>{
+    var request=await fetch("http://api.quotable.io/random")
+    var response= await request.json();
+    console.log(response);document.querySelector(".quote").innerHTML=`"${response.content}"`;
+    console.log(response);document.querySelector(".author").innerHTML=`By:${response.author}`;
+
 }
-getQuote()
+getQuote();
 
 
 window.onload = choosePic;
@@ -18,4 +18,7 @@ function choosePic() {
     console.log(randomNum)
     document.getElementById("myPicture").src = myPix[randomNum];
 }
+
+
+
 
