@@ -45,7 +45,7 @@ def register_user():
     }
     print("^^^^^^^^^", data)
     if user.User.create_user(data):
-        return redirect('/login')
+        return redirect('/users/dashboard')
     else:
         return redirect("/signup")
 
