@@ -70,32 +70,39 @@
                     {% for activity in the_journal.activities %} 
                     <div class="card my-3 card-box" style="width: 70rem;">
                         <div class="card-body">
-                        <h5 class="card-title">{{activity.activity_name}}</h5>
-                        <h6 class="card-subtitle my-2 text-muted">
-                            I was feeling 
-                            {% if activity.feeling_before == 1%}<img class ="heads" src="/static/images/happy.png">
-                            {% elif activity.feeling_before == 2%}<img class ="heads" src="/static/images/relaxed.png">
-                            {% elif activity.feeling_before == 3%}<img class ="heads" src="/static/images/sad.png">
-                            {% elif activity.feeling_before == 4%}<img class ="heads" src="/static/images/scared.png">
-                            {% elif activity.feeling_before == 5%}<img class ="heads" src="/static/images/worried.png">
-                            {% elif activity.feeling_before == 6%}<img class ="heads" src="/static/images/angry.png">
-                            {% elif activity.feeling_before == 7%}<img class ="heads" src="/static/images/enbarrassed.png">
-                            {% elif activity.feeling_before == 8%}<img class ="heads" src="/static/images/tired.png">
-                            {% endif %}
-                            before and after I felt
-                            {% if activity.feeling_after == 1%}<img class ="heads" src="/static/images/happy.png">
-                            {% elif activity.feeling_after == 2%}<img class ="heads" src="/static/images/relaxed.png">
-                            {% elif activity.feeling_after == 3%}<img class ="heads" src="/static/images/sad.png">
-                            {% elif activity.feeling_after == 4%}<img class ="heads" src="/static/images/scared.png">
-                            {% elif activity.feeling_after == 5%}<img class ="heads" src="/static/images/worried.png">
-                            {% elif activity.feeling_after == 6%}<img class ="heads" src="/static/images/angry.png">
-                            {% elif activity.feeling_after == 7%}<img class ="heads" src="/static/images/enbarrassed.png">
-                            {% elif activity.feeling_after == 8%}<img class ="heads" src="/static/images/tired.png">
-                            {% endif %}
-                        </h6>
-                        <p class="card-text">{{activity.comment}}</p>
-                        <a href="/edit/activity/{{activity.id}}" class="card-link">Edit</a>
-                        <a href="/destroy/activity/{{activity.id}}" class="card-link">Delete</a>
+                            <div class="actGoal">
+                                <div>
+                                    <h4 class="card-title">{{activity.activity_name}}</h4>
+                                </div>
+                                <div>
+                                    <h6 class="card-subtitle">Goal: {{activity.goal_name}}</h6>
+                                </div>
+                            </div>
+                            <h6 class="card-subtitle my-2 text-muted">
+                                I was feeling 
+                                {% if activity.feeling_before == 1%}<img class ="heads" src="/static/images/happy.png">
+                                {% elif activity.feeling_before == 2%}<img class ="heads" src="/static/images/relaxed.png">
+                                {% elif activity.feeling_before == 3%}<img class ="heads" src="/static/images/sad.png">
+                                {% elif activity.feeling_before == 4%}<img class ="heads" src="/static/images/scared.png">
+                                {% elif activity.feeling_before == 5%}<img class ="heads" src="/static/images/worried.png">
+                                {% elif activity.feeling_before == 6%}<img class ="heads" src="/static/images/angry.png">
+                                {% elif activity.feeling_before == 7%}<img class ="heads" src="/static/images/enbarrassed.png">
+                                {% elif activity.feeling_before == 8%}<img class ="heads" src="/static/images/tired.png">
+                                {% endif %}
+                                before and after I felt
+                                {% if activity.feeling_after == 1%}<img class ="heads" src="/static/images/happy.png">
+                                {% elif activity.feeling_after == 2%}<img class ="heads" src="/static/images/relaxed.png">
+                                {% elif activity.feeling_after == 3%}<img class ="heads" src="/static/images/sad.png">
+                                {% elif activity.feeling_after == 4%}<img class ="heads" src="/static/images/scared.png">
+                                {% elif activity.feeling_after == 5%}<img class ="heads" src="/static/images/worried.png">
+                                {% elif activity.feeling_after == 6%}<img class ="heads" src="/static/images/angry.png">
+                                {% elif activity.feeling_after == 7%}<img class ="heads" src="/static/images/enbarrassed.png">
+                                {% elif activity.feeling_after == 8%}<img class ="heads" src="/static/images/tired.png">
+                                {% endif %}
+                            </h6>
+                            <p class="card-text">{{activity.comment}}</p>
+                            <a href="/edit/activity/{{activity.id}}" class="card-link">Edit</a>
+                            <a href="/destroy/activity/{{activity.id}}" class="card-link">Delete</a>
                         </div>
                     </div>
                     {% endfor%}

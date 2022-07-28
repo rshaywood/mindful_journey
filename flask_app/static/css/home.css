@@ -10,6 +10,11 @@ img{
     height:100px;
 }
 
+.logo {
+    width: 90px;
+    height: 90px;
+}
+
 /* navigation bar */
 .navbar{
     width: 100%;
@@ -139,7 +144,11 @@ li a{
     margin: 0 auto;
 }
 
-
+.actGoal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /* footer */
 .bottom{
