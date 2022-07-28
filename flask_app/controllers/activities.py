@@ -10,7 +10,7 @@ from flask_app.models.user import User
 @app.route('/new/activity')
 def new_activity():
     if 'user_id' not in session:
-        return redirect('/logout')
+        return redirect('/')
    # data = {
        # "id": session['user_id']
     # }
@@ -20,13 +20,12 @@ def new_activity():
 @app.route('/create/activity', methods=['POST'])
 def create_activity():
     if 'user_id' not in session:
-        return redirect('/logout')
+        return redirect('/')
     if not activity.Activity.validate_activity(request.form):
         return redirect('/new/activity')
     else:
         activity.Activity.save(request.form)
-
-        return redirect('/users/dashboard')
+        return redirect(f"/journal/{session['user_id']}")
 
 # READ - ROUTES
 
@@ -78,7 +77,8 @@ def edit_activity(id):
     if 'user_id' not in session:
         return redirect('/')
     if not activity.Activity.validate_activity(request.form):
-        return redirect('/new/activity')
+        edit=activity.Activity.get_one_activity(id)
+        return render_template('edit_activity.html',edit=edit)
     # edit_activity=activity.Activity.get_one_activity(id)
     activity_data = {
         'id':id,

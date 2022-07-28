@@ -28,7 +28,7 @@ def page_to_register_user():
 @app.route("/create/user", methods=["POST"])
 def register_user():
     if('user_image' not in request.files or request.files['user_image'].filename == ""):
-        flash("please Insert an image")
+        flash("You Must upload an image")
         return redirect("/signup")
     image = request.files['user_image']
     filename = secure_filename(image.filename)
@@ -45,7 +45,7 @@ def register_user():
     }
     print("^^^^^^^^^", data)
     if user.User.create_user(data):
-        return redirect('/users/dashboard')
+        return redirect('/login')
     else:
         return redirect("/signup")
 

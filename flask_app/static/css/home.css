@@ -150,6 +150,28 @@ li a{
     align-items: center;
 }
 
+/* description and quote part */
+.col.my-3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.quotes{
+
+    color: #495057;
+}
+.quotes h5{
+    text-align: center;
+    font-size: 16px;
+}
+.quotes h6{
+
+    text-align: center;
+    font-size: 14px;
+}
+/****************************/
+
 /* footer */
 .bottom{
     display: flex;

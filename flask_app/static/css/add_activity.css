@@ -334,4 +334,8 @@ img.fnone{
 
 
 
-
+.error{
+    padding:0 100px;
+    display: flex;
+    justify-content: flex-end;
+}

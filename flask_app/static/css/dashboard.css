@@ -7,7 +7,6 @@
 .user_image{
     width:200px;
     height:200px; 
-    background-color: aqua;
 }
 
 img{
@@ -30,6 +29,7 @@ img{
     gap:10px;
     align-items: center;
 }
+
 .left-side-nav ul,.right-side-nav ul,.title{
     /* background-color: #20c997; */
     display: flex;
@@ -135,8 +135,8 @@ a .signin-btn:hover{
     align-self: center;
 }
 .img3{
-    width:130px;
-    height:130px;
+    width:140px;
+    height:140px;
     color: rgb(41, 106, 110);
     background-image: url("../images/brain-g2c8f19157_1920.jpg");
     background-size:cover;
@@ -207,6 +207,7 @@ a .signin-btn:hover{
         animation: action 1.4s infinite  alternate;
         align-self: center;
     }
+    
 @-webkit-keyframes action {
     0% { transform: translateY(0); }
     100% { transform: translateY(-10px); }
@@ -236,6 +237,6 @@ footer{
     color: #343a40;
 }
 .social-icon{
-    width:30%;
+    width:28%;
     margin: 0 auto;
 }
