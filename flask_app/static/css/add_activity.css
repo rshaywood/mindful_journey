@@ -296,7 +296,9 @@ img.fnone{
     width:16px;
     height:16px; 
     margin-top:-8px; 
-    background:url(http://www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/images/msdropdown/skin1/dd_arrow.gif) no-repeat;
+    /* plug in for arrow hover in ddmenu */
+    background:url(http://www.marghoobsuleman.com/mywork/jcomponents/image-dropdown/samples/images/msdropdown/skin1/dd_arrow.gif) no-repeat; 
+
 }
 .dd .ddArrow:hover{
     background-position:0 100%;
