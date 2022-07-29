@@ -19,6 +19,15 @@ function choosePic() {
     document.getElementById("myPicture").src = myPix[randomNum];
 }
 
+// script for dropdown box in add and edit forms
+$(document).ready(function(e) {
+    try {
+    $("body select").msDropDown();
+    } catch(e) {
+    alert(e.message);
+    }
+    });
+
 
 
 
