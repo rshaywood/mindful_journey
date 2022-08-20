@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Marcellus SC', serif;
 }
+
 .user_image{
     width:200px;
     height:200px; 
@@ -85,9 +86,10 @@ a .signin-btn:hover{
 
 
 .container-dashboard{
+    position: relative;
     /* background-color: #ced4da; */
     width:90%;
-    height: 500px;
+    height: 600px;
     margin:0 auto;
     display: flex;
     justify-content: space-between;
@@ -99,7 +101,7 @@ a .signin-btn:hover{
 } */
 
 .right_side{
-    width:60%;
+    width:65%;
     display: flex;
     flex-wrap: wrap;
     gap:40px;
@@ -113,6 +115,10 @@ a .signin-btn:hover{
     align-items: center;
     justify-content: center;
     box-shadow: 3px 3px 3px gray;
+}
+.circle-img:hover{
+    width:170px;
+    height:170px;
 }
 /******************** ANIMATION FOR CIRCLE IMAGES ON DASHBOARD************************** */
 .img1{
@@ -135,8 +141,8 @@ a .signin-btn:hover{
     align-self: center;
 }
 .img3{
-    width:140px;
-    height:140px;
+    width:130px;
+    height:130px;
     color: rgb(41, 106, 110);
     background-image: url("../images/brain-g2c8f19157_1920.jpg");
     background-size:cover;
@@ -165,8 +171,8 @@ a .signin-btn:hover{
     align-self: flex-end;
     }
     .img6{
-        width:170px;
-        height:170px;
+        width:160px;
+        height:160px;
         color: #fff;
         font-size: 16px;
         background-image: url("../images/harmony-g7ff54946c_1920.jpg");
@@ -185,8 +191,8 @@ a .signin-btn:hover{
     .img8{
         background-image: url("../images/meditation-gc2ee6b235_1920.jpg");
         background-size:cover;
-        -webkit-animation: action 0.9s infinite  alternate;
-        animation: action 0.9s infinite  alternate;
+        -webkit-animation: action 0.7s infinite  alternate;
+        animation: action 0.7s infinite  alternate;
         align-self: flex-end;
     }
     .img9{
@@ -199,8 +205,8 @@ a .signin-btn:hover{
         align-self: flex-end;
     }
     .img10{
-        width:130px;
-        height:130px;
+        width:120px;
+        height:120px;
         background-image: url("../images/question-g6204f06be_1920.png");
         background-size:cover;
         -webkit-animation: action 1.4s infinite  alternate;
@@ -240,3 +246,76 @@ footer{
     width:28%;
     margin: 0 auto;
 }
+/* **************advice carosoul section************************************* */
+.carousel-inner{
+    width:800px;
+    background-color: #C3DFE9;
+    /* background-color: #c3d7ea; */
+    padding:0 200px;
+}
+.slide{
+    width:98%;
+    margin: 0 auto;
+}
+
+/* ***********************************advice box***************** */
+
+.advice_box {
+    background-color: #c3d7ea;
+    padding:10px 10px;
+    margin: 0 auto;
+    width:600px;
+    height:400px;
+    position: absolute;
+    top:120px;
+    left: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 3px grey;
+}
+@keyframes moveInbottom{
+    /* start point */
+    0%{ 
+        opacity:0;
+        /* translate x becuase we want to shift text fron left to right and left mean negative value */
+        transform: translateY(30px);
+    }
+    
+    /* endpoint */
+    100%{
+        opacity:1;
+        /* translate 0 means back to origin */
+        transform: translate(0px);
+    }
+}
+.advice_box{
+    animation: moveInbottom .5s ease-out 2s;
+    animation-fill-mode: backwards;
+}
+.content{
+    padding:70px 40px;
+    display: flex;
+    flex-direction: column;
+    gap:70px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+p.close{
+    cursor: pointer;
+    display: inline-block;
+    background-color: #fff;
+    border: 1px soild black;
+    padding:0 5px;
+    align-self: flex-end;
+}
+.close_icon{
+    display: flex;
+    justify-content: flex-end;
+}
+.hidden{
+    display: none;
+}
+

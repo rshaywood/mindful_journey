@@ -203,3 +203,63 @@ footer{
 }
 
 /* popup delete box */
+
+
+/* ***********animation part  for mindfull journey and taking step to be the best you in home page ************************************* */
+h2.fs-1{
+    color: rgb(59, 59, 59);
+    letter-spacing: 15px;
+    animation: moveInleft 3s ease-out;
+ 
+    
+    }
+    h4.mb-3{
+    color: rgb(59, 59, 59);
+    letter-spacing: 4px;
+    animation: moveInRight 3s ease-out;
+    margin-bottom: 60px;;
+    }
+
+    /* implement key frame animation  moveinleft for mindful journey */
+    @keyframes moveInleft{
+        /* start point */
+        0%{ 
+            opacity:0;
+            /* translate x becuase we want to shift text fron left to right and left mean negative value */
+            transform: translateX(-100px);
+        }
+        /* middle point */
+        50%{
+            /* positive value means shift to left and from right to left positive value */
+            transform: translateX(10px);
+    
+        }
+        /* endpoint */
+        100%{
+            opacity:1;
+            /* translate 0 means back to origin */
+            transform: translate(0px);
+        }
+    }
+    /* implement key frame animation  moveinright  for taking steps to be the best you*/
+    @keyframes moveInRight{
+        /* start point */
+        0%{ 
+            opacity:0;
+            /* translate x becuase we want to shift text fron left to right and left mean negative value */
+            transform: translateX(100px);
+        }
+        /* middle point */
+        50%{
+            /* positive value means shift to left and from right to left (positive value) */
+            transform: translateX(-10px);
+    
+        }
+        /* endpoint */
+        100%{
+            opacity:1;
+            /* translate 0 means back to origin */
+            transform: translate(0px);
+        }
+    }
+    
